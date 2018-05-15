@@ -22,13 +22,19 @@ const styles = {
   }
 };
 
-export default class NavBar extends Component {
+class NavBar extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     const classes = this.props;
+
+    const onClick = e => {
+      e.preventDefault();
+      console.log("CLICK");
+    };
+
     return (
       <div className={classes.root}>
         <AppBar position="static">
@@ -44,13 +50,22 @@ export default class NavBar extends Component {
               variant="title"
               color="inherit"
               className={classes.flex}
+              style={styles.flex}
             >
               Momentum
             </Typography>
-            <Button color="inherit">Login</Button>
+            <Button color="inherit" onClick={onClick}>
+              Login
+            </Button>
           </Toolbar>
         </AppBar>
       </div>
     );
   }
 }
+
+NavBar.propTypes = {
+  classes: PropTypes.object.isRequired
+};
+
+export default withStyles(styles)(NavBar);
