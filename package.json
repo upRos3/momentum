@@ -13,7 +13,8 @@
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-hot-loader": "^4.1.3"
+    "react-hot-loader": "^4.1.3",
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "@neutrinojs/react": "^8.2.3",

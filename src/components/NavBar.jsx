@@ -1,11 +1,13 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import LoginButton from "./LoginButton";
+
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 
@@ -27,13 +29,12 @@ class NavBar extends Component {
     super(props);
   }
 
+  state = {
+    open: false
+  };
+
   render() {
     const classes = this.props;
-
-    const onClick = e => {
-      e.preventDefault();
-      console.log("CLICK");
-    };
 
     return (
       <div className={classes.root}>
@@ -54,9 +55,7 @@ class NavBar extends Component {
             >
               Momentum
             </Typography>
-            <Button color="inherit" onClick={onClick}>
-              Login
-            </Button>
+            <LoginButton />
           </Toolbar>
         </AppBar>
       </div>
