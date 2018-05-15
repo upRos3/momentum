@@ -15,6 +15,7 @@ const styles = {
 
 class LoginButton extends Component {
   state = {
+    open: false,
     loggedIn: false
   };
 
@@ -26,6 +27,10 @@ class LoginButton extends Component {
 
     const handleClose = e => {
       this.setState({ open: false });
+    };
+
+    const logout = e => {
+      this.setState({ loggedIn: false });
     };
 
     const loginButtonToggle = () => {
@@ -47,9 +52,9 @@ class LoginButton extends Component {
         );
       } else {
         return (
-          <Typography variant="button" color="inherit">
-            Josh
-          </Typography>
+          <Button color="inherit" onClick={logout}>
+            Logout
+          </Button>
         );
       }
     };
