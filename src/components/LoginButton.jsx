@@ -29,15 +29,24 @@ class LoginButton extends Component {
       this.setState({ open: false });
     };
 
+    // This is temporary until I have the model working
+    const login = e => {
+      this.setState({ loggedIn: true });
+    };
+
     const logout = e => {
       this.setState({ loggedIn: false });
+    };
+
+    const handleChange = e => {
+      console.log("In the handle change");
     };
 
     const loginButtonToggle = () => {
       if (!this.state.loggedIn) {
         return (
           <div>
-            <Button color="inherit" onClick={handleOpen}>
+            <Button color="inherit" onClick={login}>
               Login
             </Button>
             <Modal

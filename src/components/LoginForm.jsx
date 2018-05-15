@@ -18,6 +18,8 @@ const styles = theme => ({
 });
 
 class LoginModal extends Component {
+  state = {};
+
   render() {
     const { classes } = this.props;
 
@@ -30,7 +32,7 @@ class LoginModal extends Component {
               label="Name"
               className={classes.textField}
               value=""
-              onChange={handleChange}
+              // onChange={classes.handleChange}
               margin="normal"
             />
           </form>
