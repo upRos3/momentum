@@ -29,7 +29,7 @@ class LoginButton extends Component {
     };
 
     const loginButtonToggle = () => {
-      if (this.state.loggedIn === false) {
+      if (!this.state.loggedIn) {
         return (
           <div>
             <Button color="inherit" onClick={handleOpen}>
