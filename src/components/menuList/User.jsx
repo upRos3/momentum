@@ -14,28 +14,14 @@ const styles = theme => {
 };
 
 class User extends Component {
-  state = {
-    users: []
-  };
-
-  componentWillMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then(res => res.json())
-      .then(data => this.setState({ users: data }));
-  }
-
   render() {
     const { classes } = this.props;
-
-    this.state.users.map(user => {
-      console.log(user.username);
-    });
 
     return (
       <ListItem button className={classes.nested}>
         {/* Avatar will go here */}
         {/* Will map API into here to give a list of 'friends' */}
-        <ListItemText inset primary="Username" />
+        <ListItemText inset primary={this.props.username} id={this.props.id} />
       </ListItem>
     );
   }

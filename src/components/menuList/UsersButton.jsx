@@ -1,7 +1,7 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import User from "./User";
+import Users from "./Users";
 
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -39,7 +39,7 @@ export default class UsersButton extends Component {
         </ListItem>
         <Collapse in={this.state.open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <User />
+            <Users />
           </List>
         </Collapse>
       </div>
