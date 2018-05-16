@@ -2,6 +2,7 @@ import { Component } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import LoginButton from "./LoginButton";
+import MenuList from "./menuList/MenuList";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -72,11 +73,7 @@ class MenuDrawer extends Component {
       <div>
         <div className={classes.toolbar} />
         <Divider />
-        <List>Home</List>
-        <Divider />
-        <List>Posts</List>
-        <Divider />
-        <List>Albums</List>
+        <MenuList />
       </div>
     );
 
