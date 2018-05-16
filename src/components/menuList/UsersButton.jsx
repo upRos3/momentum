@@ -1,9 +1,8 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import User from "./User";
 
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -19,16 +18,16 @@ const styles = theme => {
   }
 };
 
-class UsersButton extends Component {
-  state = { open: true };
+export default class UsersButton extends Component {
+  state = {
+    open: true
+  };
 
   handleClick = () => {
     this.setState({ open: !this.state.open });
   };
 
   render() {
-    const { classes } = this.props;
-
     return (
       <div>
         <ListItem button onClick={this.handleClick}>
@@ -40,19 +39,10 @@ class UsersButton extends Component {
         </ListItem>
         <Collapse in={this.state.open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItem button className={classes.nested}>
-              {/* Avatar will go here */}
-              <ListItemText inset primary="Username" />
-            </ListItem>
+            <User />
           </List>
         </Collapse>
       </div>
     );
   }
 }
-
-UsersButton.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-export default withStyles(styles)(UsersButton);
