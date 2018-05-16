@@ -4,13 +4,14 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
+import MenuDrawer from "./components/MenuDrawer";
 
 export default class App extends Component {
   render() {
     return (
       <Router>
         <div className="App">
-          <NavBar />
+          <MenuDrawer />
         </div>
       </Router>
     );
