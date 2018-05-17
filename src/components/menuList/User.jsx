@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import Avatar from "@material-ui/core/Avatar";
 
 const styles = theme => {
   nested: {
@@ -17,8 +18,6 @@ class User extends Component {
   render() {
     const { classes } = this.props;
 
-    console.log(this.props);
-
     const userLink = `/user/${this.props.id}`;
 
     return (
@@ -28,7 +27,11 @@ class User extends Component {
         component={Link}
         to={userLink}
       >
-        {/* Avatar will go here */}
+        <Avatar
+          alt="something"
+          src={this.props.userAvatar}
+          className={classes.avatar}
+        />
 
         <ListItemText inset primary={this.props.username} />
       </ListItem>
