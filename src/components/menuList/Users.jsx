@@ -16,7 +16,7 @@ export default class Users extends Component {
 
   render() {
     const userList = this.state.users.map(user => {
-      return <User username={user.username} key={user.id} />;
+      return <User username={user.username} key={user.id} id={user.id} />;
     });
     return <div>{userList}</div>;
   }

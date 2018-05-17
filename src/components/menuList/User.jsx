@@ -17,11 +17,20 @@ class User extends Component {
   render() {
     const { classes } = this.props;
 
+    console.log(this.props);
+
+    const userLink = `/user/${this.props.id}`;
+
     return (
-      <ListItem button className={classes.nested}>
+      <ListItem
+        button
+        className={classes.nested}
+        component={Link}
+        to={userLink}
+      >
         {/* Avatar will go here */}
-        {/* Will map API into here to give a list of 'friends' */}
-        <ListItemText inset primary={this.props.username} id={this.props.id} />
+
+        <ListItemText inset primary={this.props.username} />
       </ListItem>
     );
   }
