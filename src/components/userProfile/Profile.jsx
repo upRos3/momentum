@@ -43,9 +43,9 @@ class Profile extends Component {
     }
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    console.log(nextProps);
-  }
+  // static getDerivedStateFromProps(nextProps, prevState) {
+  //   console.log(nextProps);
+  // }
 
   render() {
     console.log(this.props);
