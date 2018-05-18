@@ -38,7 +38,7 @@ class MenuDrawer extends Component {
             variant="temporary"
             anchor={theme.direction === "rtl" ? "right" : "left"}
             open={this.props.mobileOpen}
-            onClose={this.handleDrawerToggle}
+            onClose={this.props.handleDrawerToggle}
             classes={{
               paper: classes.drawerPaper
             }}
