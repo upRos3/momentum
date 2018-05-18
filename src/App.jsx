@@ -12,7 +12,6 @@ export default class App extends Component {
       <Router>
         <div className="App">
           <Route path="/" component={Main} />
-          <Route path="/user/:id" component={Profile} />
         </div>
       </Router>
     );

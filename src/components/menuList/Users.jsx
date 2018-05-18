@@ -5,10 +5,13 @@ import User from "./User";
 import Lodash from "lodash";
 
 export default class Users extends Component {
-  state = {
-    usersInfo: [],
-    usersAvatar: []
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      usersInfo: [],
+      usersAvatar: []
+    };
+  }
 
   componentWillMount() {
     fetch("https://jsonplaceholder.typicode.com/users")

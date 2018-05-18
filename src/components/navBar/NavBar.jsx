@@ -1,6 +1,6 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
-import LoginButton from "../LoginButton";
+import LoginButton from "./LoginButton";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";

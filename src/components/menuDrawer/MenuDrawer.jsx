@@ -30,6 +30,7 @@ class MenuDrawer extends Component {
         <MenuList />
       </div>
     );
+
     return (
       <div>
         <Hidden mdUp>

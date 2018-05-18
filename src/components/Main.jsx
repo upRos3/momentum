@@ -1,7 +1,7 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Content from "./Content";
+import { Route } from "react-router-dom";
+import Profile from "./userProfile/Profile";
 import NavBar from "./navBar/NavBar";
 import MenuDrawer from "./menuDrawer/MenuDrawer";
 
@@ -13,7 +13,6 @@ const drawerWidth = 240;
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    height: 430,
     zIndex: 1,
     overflow: "hidden",
     position: "relative",
@@ -44,16 +43,14 @@ class Main extends Component {
         <NavBar
           handleDrawerToggle={this.handleDrawerToggle}
           mobileOpen={this.state.mobileOpen}
-          drawerWidth={drawerWidth}
         />
         <MenuDrawer
           handleDrawerToggle={this.handleDrawerToggle}
           mobileOpen={this.state.mobileOpen}
-          drawerWidth={drawerWidth}
         />
         <main className={classes.content}>
           <div className={classes.toolbar} />
-          <Content />
+          <Route path="/user/:id" component={Profile} />
         </main>
       </div>
     );

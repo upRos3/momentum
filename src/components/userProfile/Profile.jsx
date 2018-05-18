@@ -14,7 +14,7 @@ import Paper from "@material-ui/core/Paper";
 const styles = theme => ({
   root: {
     width: "100%",
-    marginTop: theme.spacing.unit * 3,
+    marginTop: theme.spacing.unit * 6,
     overflowX: "auto",
     flexGrow: 1
   },
@@ -24,17 +24,28 @@ const styles = theme => ({
 });
 
 class Profile extends Component {
-  state = {
-    usersInfo: []
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      usersInfo: []
+    };
+  }
 
-  // componentWillMount() {
-  //   fetch(
-  //     `https://jsonplaceholder.typicode.com/users/${this.props.match.params.id}`
-  //   )
-  //     .then(res => res.json())
-  //     .then(data => this.setState({ usersInfo: data }));
-  // }
+  componentDidMount() {
+    if (this.props.match) {
+      fetch(
+        `https://jsonplaceholder.typicode.com/users/${
+          this.props.match.params.id
+        }`
+      )
+        .then(res => res.json())
+        .then(data => this.setState({ usersInfo: data }));
+    }
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    console.log(nextProps);
+  }
 
   render() {
     console.log(this.props);
