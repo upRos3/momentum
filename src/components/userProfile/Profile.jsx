@@ -1,6 +1,5 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -32,23 +31,21 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    if (this.props.match) {
-      fetch(
-        `https://jsonplaceholder.typicode.com/users/${
-          this.props.match.params.id
-        }`
-      )
-        .then(res => res.json())
-        .then(data => this.setState({ usersInfo: data }));
-    }
+    fetch(
+      `https://jsonplaceholder.typicode.com/users/${this.props.match.params.id}`
+    )
+      .then(res => res.json())
+      .then(data => this.setState({ usersInfo: data }));
   }
 
-  // static getDerivedStateFromProps(nextProps, prevState) {
-  //   console.log(nextProps);
-  // }
-
+  componentDidUpdate() {
+    fetch(
+      `https://jsonplaceholder.typicode.com/users/${this.props.match.params.id}`
+    )
+      .then(res => res.json())
+      .then(data => this.setState({ usersInfo: data }));
+  }
   render() {
-    console.log(this.props);
     const { classes } = this.props;
 
     return (
