@@ -51,10 +51,15 @@ class Profile extends Component {
     fetch(
       `https://jsonplaceholder.typicode.com/users/${this.props.match.params.id}`
     )
-      .then(res => res.json())
-      .then(data => {
-        this.setState({ usersInfo: data });
-      });
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw new Error("Something went wrong...");
+        }
+      })
+      .then(data => this.setState({ usersInfo: data }))
+      .catch(err => console.log(err));
   }
 
   // componentWillUpdate() {

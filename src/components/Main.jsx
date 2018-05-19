@@ -26,8 +26,7 @@ const styles = theme => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.default
     // padding: theme.spacing.unit * 1
-  },
-  toolbar: theme.mixins.toolbar
+  }
 });
 
 class Main extends Component {
@@ -53,7 +52,6 @@ class Main extends Component {
           mobileOpen={this.state.mobileOpen}
         />
         <main className={classes.content}>
-          <div className={classes.toolbar} />
           <Paper>
             <Route path="/user/:id" component={Profile} />
           </Paper>
