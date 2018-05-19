@@ -21,9 +21,11 @@ const styles = theme => ({
   table: {
     maxWidth: 700
   },
-  tableCell: {
-    width: 40
-  }
+  pictureCell: {
+    margin: "auto",
+    width: "50%"
+  },
+  tableCell: {}
 });
 
 // const callApi = params => {
@@ -82,10 +84,11 @@ class Profile extends Component {
         <Table className={classes.table}>
           <TableBody>
             <TableRow key="photo">
-              <TableCell className={classes.tableCell}>
+              <TableCell className={classes.pictureCell} component="th">
                 <img src="https://www.placecage.com/gif/200/300" />
               </TableCell>
             </TableRow>
+
             <TableRow key="name">
               <TableCell
                 className={classes.tableCell}
@@ -100,13 +103,11 @@ class Profile extends Component {
                   style={styles.flex}
                   noWrap
                 >
-                  Name
+                  Name: {this.state.usersInfo.name}
                 </Typography>
               </TableCell>
-              <TableCell className={classes.tableCell}>
-                {this.state.usersInfo.name}
-              </TableCell>
             </TableRow>
+
             <TableRow key="username">
               <TableCell
                 className={classes.tableCell}
@@ -121,13 +122,11 @@ class Profile extends Component {
                   style={styles.flex}
                   noWrap
                 >
-                  Username
+                  Username: {this.state.usersInfo.username}
                 </Typography>
               </TableCell>
-              <TableCell className={classes.tableCell}>
-                {this.state.usersInfo.username}
-              </TableCell>
             </TableRow>
+
             <TableRow key="email">
               <TableCell
                 className={classes.tableCell}
@@ -142,15 +141,14 @@ class Profile extends Component {
                   style={styles.flex}
                   noWrap
                 >
-                  Email
+                  Email:{" "}
+                  <a href={"mailto:" + this.state.usersInfo.email}>
+                    {this.state.usersInfo.email}
+                  </a>
                 </Typography>
               </TableCell>
-              <TableCell className={classes.tableCell}>
-                <a href={"mailto:" + this.state.usersInfo.email}>
-                  {this.state.usersInfo.email}
-                </a>
-              </TableCell>
             </TableRow>
+
             <TableRow key="website">
               <TableCell
                 className={classes.tableCell}
@@ -165,13 +163,11 @@ class Profile extends Component {
                   style={styles.flex}
                   noWrap
                 >
-                  Website
+                  Website:{" "}
+                  <a href={"http://" + this.state.usersInfo.website}>
+                    {this.state.usersInfo.website}
+                  </a>
                 </Typography>
-              </TableCell>
-              <TableCell className={classes.tableCell}>
-                <a href={"http://" + this.state.usersInfo.website}>
-                  {this.state.usersInfo.website}
-                </a>
               </TableCell>
             </TableRow>
           </TableBody>
