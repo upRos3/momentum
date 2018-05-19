@@ -9,17 +9,17 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
 
 const styles = theme => ({
   root: {
-    width: 700,
-    marginTop: theme.spacing.unit * 6,
+    width: "50%",
+    marginTop: theme.spacing.unit * 3,
     overflowX: "auto",
     flexGrow: 1
   },
   table: {
-    maxWidth: 320
+    maxWidth: 700
   },
   tableCell: {
     width: 40
@@ -79,69 +79,103 @@ class Profile extends Component {
 
     return (
       <div>
-        <Paper className={classes.root}>
-          <Table className={classes.table}>
-            <TableBody>
-              <TableRow key="photo">
-                <TableCell className={classes.tableCell}>
-                  <img src="https://www.placecage.com/gif/200/300" />
-                </TableCell>
-              </TableRow>{" "}
-              <TableRow key="name">
-                <TableCell
-                  className={classes.tableCell}
-                  component="th"
-                  scope="row"
+        <Table className={classes.table}>
+          <TableBody>
+            <TableRow key="photo">
+              <TableCell className={classes.tableCell}>
+                <img src="https://www.placecage.com/gif/200/300" />
+              </TableCell>
+            </TableRow>
+            <TableRow key="name">
+              <TableCell
+                className={classes.tableCell}
+                component="th"
+                scope="row"
+              >
+                <Typography
+                  variant="subheading"
+                  component="p"
+                  color="inherit"
+                  className={classes.flex}
+                  style={styles.flex}
+                  noWrap
                 >
-                  <span>Name</span>
-                </TableCell>
-                <TableCell className={classes.tableCell}>
-                  {this.state.usersInfo.name}
-                </TableCell>
-              </TableRow>{" "}
-              <TableRow key="username">
-                <TableCell
-                  className={classes.tableCell}
-                  // component="th"
-                  // scope="row"
+                  Name
+                </Typography>
+              </TableCell>
+              <TableCell className={classes.tableCell}>
+                {this.state.usersInfo.name}
+              </TableCell>
+            </TableRow>
+            <TableRow key="username">
+              <TableCell
+                className={classes.tableCell}
+                component="th"
+                scope="row"
+              >
+                <Typography
+                  variant="subheading"
+                  component="p"
+                  color="inherit"
+                  className={classes.flex}
+                  style={styles.flex}
+                  noWrap
                 >
-                  <span>Username</span>
-                </TableCell>
-                <TableCell className={classes.tableCell}>
-                  {this.state.usersInfo.username}
-                </TableCell>
-              </TableRow>{" "}
-              <TableRow key="email">
-                <TableCell
-                  className={classes.tableCell}
-                  component="th"
-                  scope="row"
+                  Username
+                </Typography>
+              </TableCell>
+              <TableCell className={classes.tableCell}>
+                {this.state.usersInfo.username}
+              </TableCell>
+            </TableRow>
+            <TableRow key="email">
+              <TableCell
+                className={classes.tableCell}
+                component="th"
+                scope="row"
+              >
+                <Typography
+                  variant="subheading"
+                  component="p"
+                  color="inherit"
+                  className={classes.flex}
+                  style={styles.flex}
+                  noWrap
                 >
-                  <span>Email</span>
-                </TableCell>
-                <TableCell className={classes.tableCell}>
-                  <a href={"mailto:" + this.state.usersInfo.email}>
-                    {this.state.usersInfo.email}
-                  </a>
-                </TableCell>
-              </TableRow>{" "}
-              <TableRow key="website">
-                <TableCell
-                  className={classes.tableCell}
-                  component="th"
-                  scope="row"
+                  Email
+                </Typography>
+              </TableCell>
+              <TableCell className={classes.tableCell}>
+                <a href={"mailto:" + this.state.usersInfo.email}>
+                  {this.state.usersInfo.email}
+                </a>
+              </TableCell>
+            </TableRow>
+            <TableRow key="website">
+              <TableCell
+                className={classes.tableCell}
+                component="th"
+                scope="row"
+              >
+                <Typography
+                  variant="subheading"
+                  component="p"
+                  color="inherit"
+                  className={classes.flex}
+                  style={styles.flex}
+                  noWrap
                 >
-                  <span>Website</span>
-                </TableCell>
-                <TableCell className={classes.tableCell}>
-                  <a href={"http://" + this.state.usersInfo.website}>
-                    {this.state.usersInfo.website}
-                  </a>
-                </TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </Paper>
+                  Website
+                </Typography>
+              </TableCell>
+              <TableCell className={classes.tableCell}>
+                <a href={"http://" + this.state.usersInfo.website}>
+                  {this.state.usersInfo.website}
+                </a>
+              </TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
       </div>
     );
   }

@@ -7,8 +7,9 @@ import MenuDrawer from "./menuDrawer/MenuDrawer";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
 
-const drawerWidth = 240;
+const drawerWidth = 150;
 
 const styles = theme => ({
   root: {
@@ -20,10 +21,13 @@ const styles = theme => ({
     width: "100%"
   },
   content: {
+    margin: "auto",
+    width: "50%",
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
-    padding: theme.spacing.unit * 3
-  }
+    padding: theme.spacing.unit * 1
+  },
+  toolbar: theme.mixins.toolbar
 });
 
 class Main extends Component {
@@ -50,7 +54,9 @@ class Main extends Component {
         />
         <main className={classes.content}>
           <div className={classes.toolbar} />
-          <Route path="/user/:id" component={Profile} />
+          <Paper className={classes.root}>
+            <Route path="/user/:id" component={Profile} />
+          </Paper>
         </main>
       </div>
     );

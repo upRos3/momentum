@@ -25,7 +25,6 @@ const styles = theme => ({
       display: "none"
     }
   },
-  toolbar: theme.mixins.toolbar,
   flex: {
     flex: 1
   }
