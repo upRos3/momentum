@@ -22,10 +22,10 @@ const styles = theme => ({
   },
   content: {
     margin: "auto",
-    width: "50%",
+    maxWidth: 490,
     flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
-    padding: theme.spacing.unit * 1
+    backgroundColor: theme.palette.background.default
+    // padding: theme.spacing.unit * 1
   },
   toolbar: theme.mixins.toolbar
 });
@@ -54,7 +54,7 @@ class Main extends Component {
         />
         <main className={classes.content}>
           <div className={classes.toolbar} />
-          <Paper className={classes.root}>
+          <Paper>
             <Route path="/user/:id" component={Profile} />
           </Paper>
         </main>

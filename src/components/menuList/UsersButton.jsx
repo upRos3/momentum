@@ -23,14 +23,14 @@ export default class UsersButton extends Component {
     open: true
   };
 
-  handleClick = () => {
+  handleFriendsClick = () => {
     this.setState({ open: !this.state.open });
   };
 
   render() {
     return (
       <div>
-        <ListItem button onClick={this.handleClick}>
+        <ListItem button onClick={this.handleFriendsClick}>
           <ListItemIcon>
             <FriendIcon />
           </ListItemIcon>

@@ -19,7 +19,7 @@ const styles = theme => ({
     flexGrow: 1
   },
   table: {
-    maxWidth: 700
+    maxWidth: 490
   },
   pictureCell: {
     margin: "auto",

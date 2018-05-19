@@ -28,6 +28,7 @@ class MenuList extends Component {
         <List
           component="nav"
           subheader={<ListSubheader component="div">Menu</ListSubheader>}
+          onClick={this.props.handleDrawerToggle}
         >
           <HomeButton />
           <PostsButton />
