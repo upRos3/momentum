@@ -13,7 +13,7 @@ export default class Users extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then(res => res.json())
       .then(data => this.setState({ usersInfo: data }));
