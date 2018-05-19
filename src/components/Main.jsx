@@ -39,6 +39,7 @@ class Main extends Component {
     this.setState({ mobileOpen: !this.state.mobileOpen });
   };
 
+  // Should have another paper NEXT to this one for the user posts by their profile
   render() {
     const { classes, theme } = this.props;
 

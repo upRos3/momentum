@@ -1,6 +1,7 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
+import API from "../../api";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -27,57 +28,36 @@ const styles = theme => ({
   }
 });
 
-// const callApi = params => {
-//   fetch(`https://jsonplaceholder.typicode.com/users/${params}`)
-//     .then(res => res.json())
-//     .then(data => {
-//       return data;
-//     });
+// const apiCall = params => {
+//   API.get(`users/${params}`)
+//     .then(res => {
+//       return res.data;
+//     })
+//     .catch(err => console.log(err));
 // };
 
 class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      usersInfo: []
+      userInfo: []
     };
   }
 
   componentWillMount() {
-    // console.log(callApi(this.props.match.params.id));
-    // this.setState({ usersInfo: callApi(this.props.match.params.id) });
-    // debugger;
-    fetch(
-      `https://jsonplaceholder.typicode.com/users/${this.props.match.params.id}`
-    )
+    API.get(`users/${this.props.match.params.id}`)
       .then(res => {
-        if (res.ok) {
-          return res.json();
-        } else {
-          throw new Error("Something went wrong...");
-        }
+        return this.setState({ userInfo: res.data });
       })
-      .then(data => this.setState({ usersInfo: data }))
       .catch(err => console.log(err));
   }
 
-  // componentWillUpdate() {
-  //   if (this.state.usersInfo) this.setState({ usersInfo: [] });
-  // }
-
   componentDidUpdate() {
-    // this.setState({ usersInfo: [] });
-    fetch(
-      `https://jsonplaceholder.typicode.com/users/${this.props.match.params.id}`
-    )
-      .then(res => res.json())
-      .then(data => {
-        if (this.state.usersInfo !== data) {
-          this.setState({ usersInfo: data });
-        } else {
-          return null;
-        }
-      });
+    API.get(`users/${this.props.match.params.id}`)
+      .then(res => {
+        return this.setState({ userInfo: res.data });
+      })
+      .catch(err => console.log(err));
   }
 
   render() {
@@ -108,7 +88,7 @@ class Profile extends Component {
                   align="center"
                   noWrap
                 >
-                  Name: {this.state.usersInfo.name}
+                  Name: {this.state.userInfo.name}
                 </Typography>
               </TableCell>
             </TableRow>
@@ -128,7 +108,7 @@ class Profile extends Component {
                   align="center"
                   noWrap
                 >
-                  Username: {this.state.usersInfo.username}
+                  Username: {this.state.userInfo.username}
                 </Typography>
               </TableCell>
             </TableRow>
@@ -149,8 +129,8 @@ class Profile extends Component {
                   noWrap
                 >
                   Email:{" "}
-                  <a href={"mailto:" + this.state.usersInfo.email}>
-                    {this.state.usersInfo.email}
+                  <a href={"mailto:" + this.state.userInfo.email}>
+                    {this.state.userInfo.email}
                   </a>
                 </Typography>
               </TableCell>
@@ -172,8 +152,8 @@ class Profile extends Component {
                   noWrap
                 >
                   Website:{" "}
-                  <a href={"http://" + this.state.usersInfo.website}>
-                    {this.state.usersInfo.website}
+                  <a href={"http://" + this.state.userInfo.website}>
+                    {this.state.userInfo.website}
                   </a>
                 </Typography>
               </TableCell>
