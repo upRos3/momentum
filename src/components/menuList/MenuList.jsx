@@ -25,11 +25,7 @@ class MenuList extends Component {
 
     return (
       <div className={classes.root}>
-        <List
-          component="nav"
-          subheader={<ListSubheader component="div">Menu</ListSubheader>}
-          onClick={this.props.handleDrawerToggle}
-        >
+        <List component="nav" onClick={this.props.handleDrawerToggle}>
           <HomeButton />
           <PostsButton />
           <AlbumsButton />
