@@ -21,6 +21,7 @@ const styles = theme => ({
     width: "100%"
   },
   content: {
+    marginTop: theme.spacing.unit * 10,
     margin: "auto",
     maxWidth: 490,
     flexGrow: 1,

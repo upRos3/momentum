@@ -22,10 +22,9 @@ const styles = theme => ({
     maxWidth: 490
   },
   pictureCell: {
-    margin: "auto",
-    width: "50%"
-  },
-  tableCell: {}
+    marginLeft: "auto",
+    marginRight: "auto"
+  }
 });
 
 // const callApi = params => {
@@ -106,6 +105,7 @@ class Profile extends Component {
                   color="inherit"
                   className={classes.flex}
                   style={styles.flex}
+                  align="center"
                   noWrap
                 >
                   Name: {this.state.usersInfo.name}
@@ -125,6 +125,7 @@ class Profile extends Component {
                   color="inherit"
                   className={classes.flex}
                   style={styles.flex}
+                  align="center"
                   noWrap
                 >
                   Username: {this.state.usersInfo.username}
@@ -144,6 +145,7 @@ class Profile extends Component {
                   color="inherit"
                   className={classes.flex}
                   style={styles.flex}
+                  align="center"
                   noWrap
                 >
                   Email:{" "}
@@ -166,6 +168,7 @@ class Profile extends Component {
                   color="inherit"
                   className={classes.flex}
                   style={styles.flex}
+                  align="center"
                   noWrap
                 >
                   Website:{" "}
