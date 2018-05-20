@@ -1,6 +1,7 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
 import typicodeApiCall from "../../helperFunctions";
+import Post from "./Post";
 
 export default class Posts extends Component {
   constructor(props) {
@@ -17,9 +18,11 @@ export default class Posts extends Component {
   }
 
   render() {
-    // const album = this.state.albums.map(album => {
-    //   return <Album title={album.title} key={album.id} id={album.id} />;
-    // });
-    return <div>something</div>;
+    const post = this.state.posts.map(post => {
+      return (
+        <Post title={post.title} body={post.body} key={post.id} id={post.id} />
+      );
+    });
+    return <div>{post}</div>;
   }
 }

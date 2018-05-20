@@ -1,6 +1,6 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -10,7 +10,7 @@ import Avatar from "@material-ui/core/Avatar";
 
 const styles = theme => {};
 
-class Album extends Component {
+export default class Album extends Component {
   render() {
     const { classes } = this.props;
 
@@ -26,9 +26,3 @@ class Album extends Component {
     );
   }
 }
-
-Album.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-export default withStyles(styles)(Album);

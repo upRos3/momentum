@@ -14,7 +14,7 @@ const styles = theme => ({
   drawerPaper: {
     width: drawerWidth,
     [theme.breakpoints.up("md")]: {
-      position: "relative"
+      position: "fixed"
     }
   }
 });
