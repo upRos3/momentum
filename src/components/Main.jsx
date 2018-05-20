@@ -4,7 +4,7 @@ import { Route } from "react-router-dom";
 import NavBar from "./navBar/NavBar";
 import MenuDrawer from "./menuDrawer/MenuDrawer";
 import Profile from "./userProfile/Profile";
-import Albums from "./albums/Albums";
+import Albums from "./photoAlbums/Albums";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
