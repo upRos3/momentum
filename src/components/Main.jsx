@@ -1,9 +1,10 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
 import { Route } from "react-router-dom";
-import Profile from "./userProfile/Profile";
 import NavBar from "./navBar/NavBar";
 import MenuDrawer from "./menuDrawer/MenuDrawer";
+import Profile from "./userProfile/Profile";
+import Albums from "./albums/Albums";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -56,6 +57,9 @@ class Main extends Component {
         <main className={classes.content}>
           <Paper>
             <Route path="/user/:id" component={Profile} />
+          </Paper>
+          <Paper>
+            <Route path="/albums/" component={Albums} />
           </Paper>
         </main>
       </div>
