@@ -1,6 +1,7 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
 import typicodeApiCall from "../../helperFunctions";
+import Album from "./Album";
 
 export default class Albums extends Component {
   constructor(props) {
@@ -11,13 +12,22 @@ export default class Albums extends Component {
   }
 
   componentDidMount() {
-    typicodeApiCall("albums").then(res => {
+    typicodeApiCall("albums", "?userId=1").then(res => {
       this.setState({ albums: res });
     });
   }
 
   render() {
-    // const user = this.state.usersInfo.map(user => {}
-    return <div>something</div>;
+    const album = this.state.albums.map(album => {
+      return (
+        <Album
+          title={album.title}
+          key={album.id}
+          id={album.id}
+          // userAvatar={user[1]}
+        />
+      );
+    });
+    return <div>{album}</div>;
   }
 }
