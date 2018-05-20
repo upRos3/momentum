@@ -28,6 +28,7 @@ class MenuDrawer extends Component {
         <div className={classes.toolbar} />
         <Divider />
         <MenuList handleDrawerToggle={this.props.handleDrawerToggle} />
+        <Divider />
       </div>
     );
 
