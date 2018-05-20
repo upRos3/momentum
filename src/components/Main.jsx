@@ -6,6 +6,7 @@ import MenuDrawer from "./menuDrawer/MenuDrawer";
 import Profile from "./userProfile/Profile";
 import Albums from "./photoAlbums/Albums";
 import Photos from "./photoAlbums/Photos";
+import Posts from "./posts/Posts";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -64,6 +65,9 @@ class Main extends Component {
           </Paper>
           <Paper>
             <Route path="/album/:id/photos" component={Photos} />
+          </Paper>
+          <Paper>
+            <Route path="/posts" component={Posts} />
           </Paper>
         </main>
       </div>

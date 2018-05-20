@@ -1,9 +1,7 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
-import { Route } from "react-router-dom";
 import typicodeApiCall from "../../helperFunctions";
 import Album from "./Album";
-import Photos from "./Photos";
 
 export default class Albums extends Component {
   constructor(props) {
