@@ -1,7 +1,7 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
-import apiCall from "../../helperFunctions";
+import typicodeApiCall from "../../helperFunctions";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -37,7 +37,7 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    apiCall(this.props.match.params.id).then(res => {
+    typicodeApiCall("users", this.props.match.params.id).then(res => {
       this.setState({ userInfo: res });
     });
   }
@@ -45,7 +45,7 @@ class Profile extends Component {
   componentDidUpdate() {
     // Conditional needs needs to read different data types
     if (this.props.match.params.id != this.state.userInfo.id) {
-      apiCall(this.props.match.params.id).then(res => {
+      typicodeApiCall("users", this.props.match.params.id).then(res => {
         this.setState({ userInfo: res });
       });
     }

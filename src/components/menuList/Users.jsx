@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import User from "./User";
 import Lodash from "lodash";
 import axios from "axios";
-import API from "../../api";
+import typicodeApiCall from "../../helperFunctions";
 
 export default class Users extends Component {
   constructor(props) {
@@ -15,11 +15,11 @@ export default class Users extends Component {
   }
 
   componentDidMount() {
-    API.get(`users/`)
-      .then(res => {
-        this.setState({ usersInfo: res.data });
-      })
-      .catch(err => console.log(err));
+    typicodeApiCall("users").then(res => {
+      this.setState({ usersInfo: res });
+    });
+
+    // create loading function here
     // .then(
     //   axios.get("https://randomuser.me/api/?results=10").then(res => {
     //     res.data.results.map(incomingAvatar => {
