@@ -1,14 +1,14 @@
 import { Component } from "react";
+import typicodeApiCall from "../../helperFunctions";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
-import Subheader from "material-ui/List/ListSubheader";
+import Subheader from "@material-ui/core/ListSubheader";
 import IconButton from "@material-ui/core/IconButton";
 import InfoIcon from "@material-ui/icons/Info";
-import tileData from "./tileData";
 
 const styles = theme => ({
   root: {
@@ -27,39 +27,35 @@ const styles = theme => ({
   }
 });
 
-/**
- * The example data is structured as follows:
- *
- * import image from 'path/to/image.jpg';
- * [etc...]
- *
- * const tileData = [
- *   {
- *     img: image,
- *     title: 'Image',
- *     author: 'author',
- *   },
- *   {
- *     [etc...]
- *   },
- * ];
- */
 class Photos extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      photos: []
+    };
+  }
+
+  componentDidMount() {
+    typicodeApiCall("photos", "?albumId=1").then(res => {
+      this.setState({ photos: res });
+    });
+  }
+
   render() {
-    const { classes } = props;
+    const { classes } = this.props;
 
     return (
       <div className={classes.root}>
         <GridList cellHeight={180} className={classes.gridList}>
           <GridListTile key="Subheader" cols={2} style={{ height: "auto" }}>
-            <Subheader component="div">December</Subheader>
+            <Subheader component="div">Album name will go here</Subheader>
           </GridListTile>
-          {tileData.map(tile => (
-            <GridListTile key={tile.img}>
-              <img src={tile.img} alt={tile.title} />
+          {this.state.photos.map(photo => (
+            <GridListTile key={photo.id}>
+              <img src={photo.thumbnailUrl} alt={photo.title} />
               <GridListTileBar
-                title={tile.title}
-                subtitle={<span>by: {tile.author}</span>}
+                title={photo.title}
+                subtitle={<span>by: name will go here</span>}
                 actionIcon={
                   <IconButton className={classes.icon}>
                     <InfoIcon />
