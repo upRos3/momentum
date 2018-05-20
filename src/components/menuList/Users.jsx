@@ -36,7 +36,6 @@ export default class Users extends Component {
   }
 
   render() {
-    console.log(this.state);
     // Lodash 'zips' the two arrays togeather to allow for mapping of state.
     // const user = _.zip(this.state.usersInfo, this.state.usersAvatar).map(
     // Will come back to this later in the project as a stretch

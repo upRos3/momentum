@@ -1,7 +1,7 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
-import API from "../../api";
+import apiCall from "../../helperFunctions";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -28,14 +28,6 @@ const styles = theme => ({
   }
 });
 
-// const apiCall = params => {
-//   API.get(`users/${params}`)
-//     .then(res => {
-//       return res.data;
-//     })
-//     .catch(err => console.log(err));
-// };
-
 class Profile extends Component {
   constructor(props) {
     super(props);
@@ -44,20 +36,19 @@ class Profile extends Component {
     };
   }
 
-  componentWillMount() {
-    API.get(`users/${this.props.match.params.id}`)
-      .then(res => {
-        return this.setState({ userInfo: res.data });
-      })
-      .catch(err => console.log(err));
+  componentDidMount() {
+    apiCall(this.props.match.params.id).then(res => {
+      this.setState({ userInfo: res });
+    });
   }
 
   componentDidUpdate() {
-    API.get(`users/${this.props.match.params.id}`)
-      .then(res => {
-        return this.setState({ userInfo: res.data });
-      })
-      .catch(err => console.log(err));
+    // Conditional needs needs to read different data types
+    if (this.props.match.params.id != this.state.userInfo.id) {
+      apiCall(this.props.match.params.id).then(res => {
+        this.setState({ userInfo: res });
+      });
+    }
   }
 
   render() {
