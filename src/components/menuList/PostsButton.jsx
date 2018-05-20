@@ -13,7 +13,7 @@ export default class PostsButton extends Component {
       <ListItem
         button
         component={Link}
-        to="/posts/"
+        to="/user/1/posts"
         onClick={this.props.handleDrawerToggle}
       >
         <ListItemIcon>

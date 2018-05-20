@@ -3,14 +3,14 @@ import ReactDOM from "react-dom";
 import { Route } from "react-router-dom";
 import NavBar from "./navBar/NavBar";
 import MenuDrawer from "./menuDrawer/MenuDrawer";
-import Profile from "./userProfile/Profile";
+import ProfileLayout from "./userProfile/ProfileLayout";
 import Albums from "./photoAlbums/Albums";
 import Photos from "./photoAlbums/Photos";
-import Posts from "./posts/Posts";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
 
 const drawerWidth = 150;
 
@@ -26,7 +26,7 @@ const styles = theme => ({
   content: {
     marginTop: theme.spacing.unit * 10,
     margin: "auto",
-    maxWidth: 490,
+    maxWidth: 1000,
     flexGrow: 1,
     backgroundColor: theme.palette.background.default
     // padding: theme.spacing.unit * 1
@@ -58,16 +58,13 @@ class Main extends Component {
         />
         <main className={classes.content}>
           <Paper>
-            <Route path="/user/:id" component={Profile} />
+            <ProfileLayout />
           </Paper>
           <Paper>
             <Route path="/albums/" component={Albums} />
           </Paper>
           <Paper>
             <Route path="/album/:id/photos" component={Photos} />
-          </Paper>
-          <Paper>
-            <Route path="/posts" component={Posts} />
           </Paper>
         </main>
       </div>

@@ -22,6 +22,9 @@ class Album extends Component {
             primary={this.props.title}
             secondary={this.props.body}
           />
+          <ListItem>
+            <ListItemText inset primary="this is a comment" />
+          </ListItem>
         </ListItem>
       </div>
     );
