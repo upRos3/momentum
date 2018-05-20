@@ -1,7 +1,6 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
 import { Route, Link } from "react-router-dom";
-import Photos from "./Photos";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -14,7 +13,6 @@ const styles = theme => {};
 class Album extends Component {
   render() {
     const { classes } = this.props;
-    const { match } = this.props;
 
     const albumLink = `/album/${this.props.id}/photos`;
 

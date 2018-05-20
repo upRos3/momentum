@@ -29,7 +29,8 @@ class Photos extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      photos: []
+      photos: [],
+      albumName: ""
     };
   }
 
@@ -39,16 +40,10 @@ class Photos extends Component {
         this.setState({ photos: res });
       }
     );
+    typicodeApiCall("albums", `?id=${this.props.match.params.id}`).then(res => {
+      this.setState({ albumName: res[0].title });
+    });
   }
-
-  // componentDidUpdate() {
-  //   // Conditional needs needs to read different data types
-  //   if (this.props.match.params.id != this.state.albums.id) {
-  //     typicodeApiCall("photos", `?userId=1`).then(res => {
-  //       this.setState({ albums: res });
-  //     });
-  //   }
-  // }
 
   render() {
     const { classes } = this.props;
@@ -57,7 +52,7 @@ class Photos extends Component {
       <div className={classes.root}>
         <GridList cellHeight={180} className={classes.gridList}>
           <GridListTile key="Subheader" cols={2} style={{ height: "auto" }}>
-            <Subheader component="div">Album name will go here</Subheader>
+            <Subheader component="div">{this.state.albumName}</Subheader>
           </GridListTile>
           {this.state.photos.map(photo => (
             <GridListTile key={photo.id}>
