@@ -23,6 +23,7 @@ class User extends Component {
     return (
       <ListItem
         button
+        onClick={this.props.handleDrawerToggle}
         className={classes.nested}
         component={Link}
         to={userLink}

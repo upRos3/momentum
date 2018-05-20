@@ -63,7 +63,7 @@ class Main extends Component {
             <Route path="/albums/" component={Albums} />
           </Paper>
           <Paper>
-            <Route path="/photos/" component={Photos} />
+            <Route path="/album/:id/photos" component={Photos} />
           </Paper>
         </main>
       </div>

@@ -7,8 +7,6 @@ import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
 import Subheader from "@material-ui/core/ListSubheader";
-import IconButton from "@material-ui/core/IconButton";
-import InfoIcon from "@material-ui/icons/Info";
 
 const styles = theme => ({
   root: {
@@ -36,10 +34,21 @@ class Photos extends Component {
   }
 
   componentDidMount() {
-    typicodeApiCall("photos", "?albumId=1").then(res => {
-      this.setState({ photos: res });
-    });
+    typicodeApiCall("photos", `?albumId=${this.props.match.params.id}`).then(
+      res => {
+        this.setState({ photos: res });
+      }
+    );
   }
+
+  // componentDidUpdate() {
+  //   // Conditional needs needs to read different data types
+  //   if (this.props.match.params.id != this.state.albums.id) {
+  //     typicodeApiCall("photos", `?userId=1`).then(res => {
+  //       this.setState({ albums: res });
+  //     });
+  //   }
+  // }
 
   render() {
     const { classes } = this.props;
@@ -56,11 +65,6 @@ class Photos extends Component {
               <GridListTileBar
                 title={photo.title}
                 subtitle={<span>by: name will go here</span>}
-                actionIcon={
-                  <IconButton className={classes.icon}>
-                    <InfoIcon />
-                  </IconButton>
-                }
               />
             </GridListTile>
           ))}

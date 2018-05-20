@@ -39,7 +39,7 @@ export default class UsersButton extends Component {
         </ListItem>
         <Collapse in={this.state.open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <Users />
+            <Users handleDrawerToggle={this.props.handleDrawerToggle} />
           </List>
         </Collapse>
       </div>

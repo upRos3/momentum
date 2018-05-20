@@ -10,7 +10,7 @@ import ForumIcon from "@material-ui/icons/Forum";
 export default class PostsButton extends Component {
   render() {
     return (
-      <ListItem button>
+      <ListItem button onClick={this.props.handleDrawerToggle}>
         <ListItemIcon>
           <ForumIcon />
         </ListItemIcon>

@@ -10,7 +10,12 @@ import HomeIcon from "@material-ui/icons/Home";
 export default class HomeButton extends Component {
   render() {
     return (
-      <ListItem button component={Link} to="/">
+      <ListItem
+        button
+        onClick={this.props.handleDrawerToggle}
+        component={Link}
+        to="/"
+      >
         <ListItemIcon>
           <HomeIcon />
         </ListItemIcon>

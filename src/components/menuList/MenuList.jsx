@@ -25,11 +25,11 @@ class MenuList extends Component {
 
     return (
       <div className={classes.root}>
-        <List component="nav" onClick={this.props.handleDrawerToggle}>
-          <HomeButton />
-          <PostsButton />
-          <AlbumsButton />
-          <UsersButton />
+        <List component="nav">
+          <HomeButton handleDrawerToggle={this.props.handleDrawerToggle} />
+          <PostsButton handleDrawerToggle={this.props.handleDrawerToggle} />
+          <AlbumsButton handleDrawerToggle={this.props.handleDrawerToggle} />
+          <UsersButton handleDrawerToggle={this.props.handleDrawerToggle} />
         </List>
       </div>
     );
