@@ -58,7 +58,7 @@ class Main extends Component {
         />
         <main className={classes.content}>
           <Paper>
-            <ProfileLayout />
+            <Route path="/user/:id/" component={ProfileLayout} />
           </Paper>
           <Paper>
             <Route path="/albums/" component={Albums} />

@@ -18,7 +18,7 @@ class User extends Component {
   render() {
     const { classes } = this.props;
 
-    const userLink = `/user/${this.props.id}/posts`;
+    const userLink = `/user/${this.props.id}`;
 
     return (
       <ListItem

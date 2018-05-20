@@ -1,6 +1,5 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
-import { Link } from "react-router-dom";
 import typicodeApiCall from "../../helperFunctions";
 
 import PropTypes from "prop-types";
@@ -37,15 +36,15 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    typicodeApiCall("users", this.props.match.params.id).then(res => {
+    typicodeApiCall("users", this.props.params).then(res => {
       this.setState({ userInfo: res });
     });
   }
 
   componentDidUpdate() {
-    // Conditional needs needs to read different data types
-    if (this.props.match.params.id != this.state.userInfo.id) {
-      typicodeApiCall("users", this.props.match.params.id).then(res => {
+    // Conditional needs to read different data types
+    if (this.props.params != this.state.userInfo.id) {
+      typicodeApiCall("users", this.props.params).then(res => {
         this.setState({ userInfo: res });
       });
     }
