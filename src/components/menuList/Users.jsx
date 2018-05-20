@@ -1,16 +1,16 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import User from "./User";
 import Lodash from "lodash";
+import axios from "axios";
 import API from "../../api";
 
 export default class Users extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      usersInfo: [],
-      usersAvatar: []
+      usersInfo: []
+      // usersAvatar: []
     };
   }
 
@@ -20,36 +20,36 @@ export default class Users extends Component {
         this.setState({ usersInfo: res.data });
       })
       .catch(err => console.log(err));
-
-    fetch("https://randomuser.me/api/?results=10")
-      .then(res => res.json())
-      .then(data =>
-        data.results.map(incomingAvatar => {
-          this.setState(prevState => ({
-            usersAvatar: [
-              ...prevState.usersAvatar,
-              incomingAvatar.picture.thumbnail
-            ]
-          }));
-        })
-      );
+    // .then(
+    //   axios.get("https://randomuser.me/api/?results=10").then(res => {
+    //     res.data.results.map(incomingAvatar => {
+    //     this.setState(prevState => ({
+    //       usersAvatar: [
+    //         ...prevState.usersAvatar,
+    //         incomingAvatar.picture.thumbnail
+    //       ]
+    //     }));
+    //     });
+    //     this.setState({ usersAvatar: res.data.results. });
+    //   })
+    // );
   }
 
   render() {
-    // console.log(this.state);
+    console.log(this.state);
     // Lodash 'zips' the two arrays togeather to allow for mapping of state.
-    const user = _.zip(this.state.usersInfo, this.state.usersAvatar).map(
-      user => {
-        return (
-          <User
-            username={user[0].username}
-            key={user[0].id}
-            id={user[0].id}
-            userAvatar={user[1]}
-          />
-        );
-      }
-    );
+    // const user = _.zip(this.state.usersInfo, this.state.usersAvatar).map(
+    // Will come back to this later in the project as a stretch
+    const user = this.state.usersInfo.map(user => {
+      return (
+        <User
+          username={user.username}
+          key={user.id}
+          id={user.id}
+          // userAvatar={user[1]}
+        />
+      );
+    });
     return <div>{user}</div>;
   }
 }
