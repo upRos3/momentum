@@ -28,7 +28,7 @@ class User extends Component {
         to={userLink}
       >
         <Avatar
-          alt="something"
+          alt="userAvatar"
           src={this.props.userAvatar}
           className={classes.avatar}
         />
