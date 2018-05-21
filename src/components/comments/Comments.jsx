@@ -23,14 +23,21 @@ export default class Comments extends Component {
     this.setState(prevState => ({
       comments: [
         ...prevState.comments,
-        { body: newComment, postId: this.props.postId }
+        { name: "You", body: newComment, postId: this.props.postId }
       ]
     }));
   };
 
   render() {
     const comments = this.state.comments.map(comment => {
-      return <Comment body={comment.body} key={comment.id} id={comment.id} />;
+      return (
+        <Comment
+          name={comment.name}
+          body={comment.body}
+          key={comment.id}
+          id={comment.id}
+        />
+      );
     });
     return (
       <div>

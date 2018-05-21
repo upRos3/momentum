@@ -34,15 +34,15 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    typicodeApiGET("users", this.props.params).then(res => {
+    typicodeApiGET("users", this.props.userId).then(res => {
       this.setState({ userInfo: res });
     });
   }
 
   componentDidUpdate() {
     // Conditional needs to read different data types
-    if (this.props.params != this.state.userInfo.id) {
-      typicodeApiGET("users", this.props.params).then(res => {
+    if (this.props.userId != this.state.userInfo.id) {
+      typicodeApiGET("users", this.props.userId).then(res => {
         this.setState({ userInfo: res });
       });
     }

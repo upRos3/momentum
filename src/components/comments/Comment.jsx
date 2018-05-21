@@ -9,7 +9,11 @@ export default class Comment extends Component {
   render() {
     return (
       <ListItem>
-        <ListItemText inset primary={this.props.body} />
+        <ListItemText
+          inset
+          primary={this.props.name}
+          secondary={this.props.body}
+        />
       </ListItem>
     );
   }

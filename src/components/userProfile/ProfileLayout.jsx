@@ -25,19 +25,19 @@ const styles = theme => ({
 
 class ProfileLayout extends Component {
   render() {
-    const params = this.props.match.params.id;
+    const userId = this.props.match.params.id;
     const { classes } = this.props;
 
     return (
       <Grid container spacing={16}>
         <Grid item xs>
           <Paper className={classes.root}>
-            <Profile params={params} />
+            <Profile userId={userId} />
           </Paper>
         </Grid>
         <Grid item xs className={classes.posts}>
           <Paper>
-            <Posts params={params} />
+            <Posts userId={userId} />
           </Paper>
         </Grid>
       </Grid>
