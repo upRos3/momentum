@@ -25,11 +25,16 @@ const styles = theme => ({
   },
   content: {
     marginTop: theme.spacing.unit * 10,
+    marginRight: theme.spacing.unit * 2,
     margin: "auto",
-    maxWidth: 1000,
+    width: "50%",
+    maxWidth: 1400,
     flexGrow: 1,
     backgroundColor: theme.palette.background.default
     // padding: theme.spacing.unit * 1
+  },
+  MenuDrawer: {
+    zIndex: 3
   }
 });
 
@@ -53,6 +58,7 @@ class Main extends Component {
           mobileOpen={this.state.mobileOpen}
         />
         <MenuDrawer
+          className={classes.MenuDrawer}
           handleDrawerToggle={this.handleDrawerToggle}
           mobileOpen={this.state.mobileOpen}
         />

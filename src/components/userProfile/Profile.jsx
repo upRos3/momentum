@@ -13,13 +13,11 @@ import Typography from "@material-ui/core/Typography";
 
 const styles = theme => ({
   root: {
-    width: "50%",
+    width: "100%",
     marginTop: theme.spacing.unit * 3,
     overflowX: "auto",
-    flexGrow: 1
-  },
-  table: {
-    maxWidth: 490
+    flexGrow: 1,
+    maxWidth: 300
   },
   pictureCell: {
     marginLeft: "auto",
@@ -54,7 +52,7 @@ class Profile extends Component {
     const { classes } = this.props;
 
     return (
-      <div>
+      <div className={classes.root}>
         <Table className={classes.table}>
           <TableBody>
             <TableRow key="photo">
