@@ -2,7 +2,7 @@ import { Component } from "react";
 import ReactDOM from "react-dom";
 import User from "./User";
 // import Lodash from "lodash";
-import typicodeApiCall from "../../helperFunctions";
+import typicodeApiGET from "../../helperFunctions/typicodeGet.js";
 
 export default class Users extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ export default class Users extends Component {
   }
 
   componentDidMount() {
-    typicodeApiCall("users").then(res => {
+    typicodeApiGET("users").then(res => {
       this.setState({ usersInfo: res });
     });
 

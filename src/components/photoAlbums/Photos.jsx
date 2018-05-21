@@ -1,5 +1,5 @@
 import { Component } from "react";
-import typicodeApiCall from "../../helperFunctions";
+import typicodeApiGET from "../../helperFunctions/typicodeGet.js";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -34,12 +34,12 @@ class Photos extends Component {
   }
 
   componentDidMount() {
-    typicodeApiCall("photos", `?albumId=${this.props.match.params.id}`).then(
+    typicodeApiGET("photos", `?albumId=${this.props.match.params.id}`).then(
       res => {
         this.setState({ photos: res });
       }
     );
-    typicodeApiCall("albums", `?id=${this.props.match.params.id}`).then(res => {
+    typicodeApiGET("albums", `?id=${this.props.match.params.id}`).then(res => {
       this.setState({ albumName: res[0].title });
     });
   }

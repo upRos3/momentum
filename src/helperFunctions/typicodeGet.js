@@ -1,6 +1,6 @@
-import API from "./api";
+import API from "../api";
 
-export default function typicodeApiCall(path, params) {
+export default function typicodeApiGET(path, params) {
   console.log(path + " " + params);
   if (!params) {
     return API.get(path)

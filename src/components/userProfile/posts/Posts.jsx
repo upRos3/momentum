@@ -1,6 +1,6 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
-import typicodeApiCall from "../../../helperFunctions";
+import typicodeApiGET from "../../../helperFunctions/typicodeGet.js";
 import Profile from "../Profile";
 import Post from "./Post";
 
@@ -16,7 +16,7 @@ export default class Posts extends Component {
   }
 
   componentDidMount() {
-    typicodeApiCall("posts", `?userId=${this.props.params}`).then(res => {
+    typicodeApiGET("posts", `?userId=${this.props.params}`).then(res => {
       this.setState({ posts: res });
     });
   }
@@ -24,7 +24,7 @@ export default class Posts extends Component {
   componentDidUpdate() {
     // Conditional needs needs to read different data types
     if (this.props.params != this.state.posts[0].userId) {
-      typicodeApiCall("posts", `?userId=${this.props.params}`).then(res => {
+      typicodeApiGET("posts", `?userId=${this.props.params}`).then(res => {
         this.setState({ posts: res });
       });
     }

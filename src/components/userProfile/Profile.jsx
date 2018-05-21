@@ -1,6 +1,6 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
-import typicodeApiCall from "../../helperFunctions";
+import typicodeApiGET from "../../helperFunctions/typicodeGet.js";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -34,7 +34,7 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    typicodeApiCall("users", this.props.params).then(res => {
+    typicodeApiGET("users", this.props.params).then(res => {
       this.setState({ userInfo: res });
     });
   }
@@ -42,7 +42,7 @@ class Profile extends Component {
   componentDidUpdate() {
     // Conditional needs to read different data types
     if (this.props.params != this.state.userInfo.id) {
-      typicodeApiCall("users", this.props.params).then(res => {
+      typicodeApiGET("users", this.props.params).then(res => {
         this.setState({ userInfo: res });
       });
     }

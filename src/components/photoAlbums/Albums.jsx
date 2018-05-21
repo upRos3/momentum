@@ -1,6 +1,6 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
-import typicodeApiCall from "../../helperFunctions";
+import typicodeApiGET from "../../helperFunctions/typicodeGet.js";
 import Album from "./Album";
 
 export default class Albums extends Component {
@@ -12,7 +12,7 @@ export default class Albums extends Component {
   }
 
   componentDidMount() {
-    typicodeApiCall("albums", `?userId=1`).then(res => {
+    typicodeApiGET("albums", `?userId=1`).then(res => {
       this.setState({ albums: res });
     });
   }
