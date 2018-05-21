@@ -1,5 +1,6 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
+import Comments from "../../comments/Comments";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -46,29 +47,7 @@ class Post extends Component {
             <Divider />
           </Grid>
           <Grid item xs>
-            <ListItem>
-              <ListItemText inset primary="this is a comment" />
-            </ListItem>
-            <ListItem>
-              <TextField
-                id="full-width"
-                label="Leave a comment:"
-                InputLabelProps={{
-                  shrink: true
-                }}
-                // onChange={postTextHandler}
-                placeholder="Placeholder"
-                fullWidth
-                margin="normal"
-                onKeyPress={evt => {
-                  if (evt.key === "Enter" && evt.target.value.length !== 0) {
-                    {
-                      this.setState({ commentText: evt.target.value });
-                    }
-                  }
-                }}
-              />
-            </ListItem>
+            <Comments />
           </Grid>
         </Grid>
       </div>
