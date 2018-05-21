@@ -35,7 +35,7 @@ class ProfileLayout extends Component {
             <Profile params={params} />
           </Paper>
         </Grid>
-        <Grid item xs>
+        <Grid item xs className={classes.posts}>
           <Paper>
             <Posts params={params} />
           </Paper>

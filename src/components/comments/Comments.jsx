@@ -12,7 +12,7 @@ export default class Comments extends Component {
   }
 
   componentDidMount() {
-    typicodeApiGET("comments", `?postId=1`).then(res => {
+    typicodeApiGET("comments", `?postId=${this.props.commentId}`).then(res => {
       this.setState({ comments: res });
     });
   }
