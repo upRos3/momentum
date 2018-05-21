@@ -9,7 +9,6 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Avatar from "@material-ui/core/Avatar";
 import Grid from "@material-ui/core/Grid";
-import TextField from "@material-ui/core/TextField";
 import Divider from "@material-ui/core/Divider";
 import Collapse from "@material-ui/core/Collapse";
 
@@ -35,11 +34,6 @@ class Post extends Component {
   render() {
     const { classes } = this.props;
 
-    // const postTextHandler = evt => {
-    //   console.log("HI");
-    //   this.setState({ commentText: evt.target.value });
-    // };
-
     return (
       <div>
         <Grid container spacing={0} className={classes.container}>
@@ -63,6 +57,9 @@ class Post extends Component {
               <List component="div" disablePadding>
                 <Comments commentId={this.props.id} />
               </List>
+              {/* <List>
+
+              </List> */}
             </Grid>
           </Collapse>
         </Grid>

@@ -1,6 +1,7 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
 import Comment from "./Comment";
+import PostComment from "./PostComment";
 import typicodeApiGET from "../../helperFunctions/typicodeGet.js";
 
 export default class Comments extends Component {
@@ -30,6 +31,11 @@ export default class Comments extends Component {
     const comments = this.state.comments.map(comment => {
       return <Comment body={comment.body} key={comment.id} id={comment.id} />;
     });
-    return <div>{comments}</div>;
+    return (
+      <div>
+        {comments}
+        <PostComment />
+      </div>
+    );
   }
 }
