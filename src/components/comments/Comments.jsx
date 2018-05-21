@@ -13,19 +13,20 @@ export default class Comments extends Component {
   }
 
   componentDidMount() {
-    typicodeApiGET("comments", `?postId=${this.props.commentId}`).then(res => {
+    typicodeApiGET("comments", `?postId=${this.props.postId}`).then(res => {
       this.setState({ comments: res });
     });
   }
 
-  // componentDidUpdate() {
-  //   // Conditional needs needs to read different data types
-  //   if (this.props.params != this.state.comments[0].userId) {
-  //     typicodeApiGET("comments", `?postId=1`).then(res => {
-  //       this.setState({ comments: res });
-  //     });
-  //   }
-  // }
+  // componentDidUpdate() {}
+  postTextHandler = newComment => {
+    this.setState(prevState => ({
+      comments: [
+        ...prevState.comments,
+        { body: newComment, postId: this.props.postId }
+      ]
+    }));
+  };
 
   render() {
     const comments = this.state.comments.map(comment => {
@@ -34,7 +35,7 @@ export default class Comments extends Component {
     return (
       <div>
         {comments}
-        <PostComment />
+        <PostComment postTextHandler={this.postTextHandler} />
       </div>
     );
   }

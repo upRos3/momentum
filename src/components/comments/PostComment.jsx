@@ -6,11 +6,6 @@ import TextField from "@material-ui/core/TextField";
 
 export default class PostComment extends Component {
   render() {
-    // const postTextHandler = evt => {
-    //   console.log("HI");
-    //   this.setState({ commentText: evt.target.value });
-    // };
-
     return (
       <ListItem>
         <TextField
@@ -19,15 +14,15 @@ export default class PostComment extends Component {
           InputLabelProps={{
             shrink: true
           }}
-          // onChange={postTextHandler}
+          // onChange={this.clearText}
           placeholder="Placeholder"
           fullWidth
           margin="normal"
           onKeyPress={evt => {
             if (evt.key === "Enter" && evt.target.value.length !== 0) {
               {
-                // this.setState({ commentText: evt.target.value });
-                console.log("YEAAA");
+                this.props.postTextHandler(evt.target.value);
+                evt.target.value = "";
               }
             }
           }}

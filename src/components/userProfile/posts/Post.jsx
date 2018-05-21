@@ -55,11 +55,8 @@ class Post extends Component {
           <Collapse in={this.state.open} timeout="auto" unmountOnExit>
             <Grid item xs>
               <List component="div" disablePadding>
-                <Comments commentId={this.props.id} />
+                <Comments postId={this.props.id} />
               </List>
-              {/* <List>
-
-              </List> */}
             </Grid>
           </Collapse>
         </Grid>
