@@ -15,7 +15,7 @@ export default class PostComment extends Component {
             shrink: true
           }}
           // onChange={this.clearText}
-          placeholder="Placeholder"
+          placeholder="Press enter to send"
           fullWidth
           margin="normal"
           onKeyPress={evt => {

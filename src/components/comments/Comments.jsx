@@ -21,6 +21,7 @@ export default class Comments extends Component {
     });
   }
 
+  // Potentially bring this up to parent so idCount is over ALL posts as opposed to just each post
   postCommentHandler = newComment => {
     const payload = {
       comments: {

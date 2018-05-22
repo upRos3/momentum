@@ -13,9 +13,9 @@ import Divider from "@material-ui/core/Divider";
 import Collapse from "@material-ui/core/Collapse";
 
 const styles = theme => ({
-  nested: {
-    paddingLeft: theme.spacing.unit * 4
-  }
+  // nested: {
+  //   paddingLeft: theme.spacing.unit * 4
+  // }
 });
 
 class Post extends Component {
@@ -36,30 +36,21 @@ class Post extends Component {
 
     return (
       <div>
-        <Grid container spacing={0} className={classes.container}>
-          <Grid item xs>
-            <ListItem button onClick={this.handleClick}>
-              <Avatar
-                alt="albumAvatar"
-                src="https://www.placecage.com/c/200/300"
-              />
-              <ListItemText
-                inset
-                primary={this.props.title}
-                secondary={this.props.body}
-              />
-              {this.state.open}
-            </ListItem>
-            <Divider />
-          </Grid>
-          <Collapse in={this.state.open} timeout="auto" unmountOnExit>
-            <Grid item xs>
-              <List component="div" disablePadding>
-                <Comments postId={this.props.id} />
-              </List>
-            </Grid>
-          </Collapse>
-        </Grid>
+        <ListItem button onClick={this.handleClick}>
+          <Avatar alt="userAvatar" src="https://www.placecage.com/c/200/300" />
+          <ListItemText
+            inset
+            primary={this.props.title}
+            secondary={this.props.body}
+          />
+          {this.state.open}
+        </ListItem>
+        <Divider />
+        <Collapse in={this.state.open} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <Comments postId={this.props.id} />
+          </List>
+        </Collapse>
       </div>
     );
   }
