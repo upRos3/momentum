@@ -21,7 +21,7 @@ export default class PostComment extends Component {
           onKeyPress={evt => {
             if (evt.key === "Enter" && evt.target.value.length !== 0) {
               {
-                this.props.postTextHandler(evt.target.value);
+                this.props.postCommentHandler(evt.target.value);
                 evt.target.value = "";
               }
             }
