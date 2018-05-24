@@ -47,9 +47,9 @@ class Post extends Component {
         </ListItem>
         <Divider />
         <Collapse in={this.state.open} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
+          <ListItem component="div" disablePadding>
             <Comments postId={this.props.id} />
-          </List>
+          </ListItem>
         </Collapse>
       </div>
     );
