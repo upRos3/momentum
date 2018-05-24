@@ -38,7 +38,7 @@ export default class Users extends Component {
     // Lodash 'zips' the two arrays togeather to allow for mapping of state.
     // const user = _.zip(this.state.usersInfo, this.state.usersAvatar).map(
     // Will come back to this later in the project as a stretch
-    const user = this.state.usersInfo.map(user => {
+    const user = this.state.usersInfo.slice(1).map(user => {
       return (
         <User
           username={user.username}

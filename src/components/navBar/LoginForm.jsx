@@ -35,14 +35,13 @@ class LoginModal extends Component {
               margin="normal"
               onKeyPress={evt => {
                 if (evt.key === "Enter" && evt.target.value.length !== 0) {
-                  if (evt.target.value !== "Josh") {
+                  if (evt.target.value !== "Bret") {
                     evt.preventDefault();
                     alert("Incorrect Username");
                   } else {
-                    this.props.loginHandler(evt.target.value);
                     localStorage.setItem("loggedIn", "true");
                     evt.target.value = "";
-                    window.location.replace("/");
+                    window.location.href("/user/1");
                   }
                 }
               }}
