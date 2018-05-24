@@ -1,6 +1,6 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LoginModal from "./LoginForm";
 
 import PropTypes from "prop-types";
@@ -43,10 +43,11 @@ class LoginButton extends Component {
 
     const logout = e => {
       this.setState({ loggedIn: false });
+      localStorage.clear();
     };
 
     const loginButtonToggle = () => {
-      if (!this.state.loggedIn) {
+      if (localStorage.getItem("loggedIn") !== "true") {
         return (
           <div>
             <Button color="inherit" onClick={this.handleOpen}>
@@ -59,7 +60,12 @@ class LoginButton extends Component {
         );
       } else {
         return (
-          <Button color="inherit" onClick={logout}>
+          <Button
+            color="inherit"
+            onClick={logout}
+            component={Link}
+            to={"/login"}
+          >
             Logout
           </Button>
         );

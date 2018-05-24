@@ -1,6 +1,6 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
-import { Route } from "react-router-dom";
+import { Redirect, Route } from "react-router-dom";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -36,12 +36,13 @@ class LoginModal extends Component {
               onKeyPress={evt => {
                 if (evt.key === "Enter" && evt.target.value.length !== 0) {
                   if (evt.target.value !== "Josh") {
+                    evt.preventDefault();
                     alert("Incorrect Username");
-                    return null;
                   } else {
                     this.props.loginHandler(evt.target.value);
                     localStorage.setItem("loggedIn", "true");
                     evt.target.value = "";
+                    window.location.replace("/");
                   }
                 }
               }}

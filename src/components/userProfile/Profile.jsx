@@ -117,7 +117,10 @@ class Profile extends Component {
                   noWrap
                 >
                   Email:{" "}
-                  <a href={"mailto:" + this.state.userInfo.email}>
+                  <a
+                    href={"mailto:" + this.state.userInfo.email}
+                    target="_blank"
+                  >
                     {this.state.userInfo.email}
                   </a>
                 </Typography>
@@ -140,7 +143,10 @@ class Profile extends Component {
                   noWrap
                 >
                   Website:{" "}
-                  <a href={"http://" + this.state.userInfo.website}>
+                  <a
+                    href={"http://" + this.state.userInfo.website}
+                    target="_blank"
+                  >
                     {this.state.userInfo.website}
                   </a>
                 </Typography>

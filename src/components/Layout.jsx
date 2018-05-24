@@ -43,7 +43,7 @@ class Layout extends Component {
           loggedIn={this.state.loggedIn}
         />
         <Paper className={classes.welcome}>
-          <Redirect path="/login" component={Welcome} />
+          <Route path="/login" component={Welcome} />
         </Paper>
       </div>
     ) : (
