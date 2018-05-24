@@ -13,12 +13,16 @@ import Typography from "@material-ui/core/Typography";
 const drawerWidth = 240;
 
 const styles = theme => ({
-  appBar: {
+  appBarLoggedIn: {
     position: "fixed",
     marginLeft: drawerWidth,
     [theme.breakpoints.up("md")]: {
       width: `calc(100% - ${drawerWidth}px)`
     }
+  },
+  appBarLoggedOut: {
+    position: "fixed",
+    width: "100%"
   },
   navIconHide: {
     [theme.breakpoints.up("md")]: {
@@ -33,8 +37,15 @@ const styles = theme => ({
 class NavBar extends Component {
   render() {
     const { classes } = this.props;
+
     return (
-      <AppBar className={classes.appBar}>
+      <AppBar
+        className={
+          localStorage.getItem("loggedIn") !== "true"
+            ? classes.appBarLoggedOut
+            : classes.appBarLoggedIn
+        }
+      >
         <Toolbar>
           <IconButton
             color="inherit"

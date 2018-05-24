@@ -1,11 +1,13 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import NavBar from "./navBar/NavBar";
 import Main from "./Main";
+import Welcome from "./welcome/Welcome";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
 
 const styles = theme => ({
   root: {
@@ -15,6 +17,9 @@ const styles = theme => ({
     position: "relative",
     display: "flex",
     width: "100%"
+  },
+  welcome: {
+    margin: 200
   }
 });
 
@@ -30,11 +35,23 @@ class Layout extends Component {
   render() {
     const { classes, theme } = this.props;
 
-    return (
+    return localStorage.getItem("loggedIn") !== "true" ? (
       <div className={classes.root}>
         <NavBar
           handleDrawerToggle={this.handleDrawerToggle}
           mobileOpen={this.state.mobileOpen}
+          loggedIn={this.state.loggedIn}
+        />
+        <Paper className={classes.welcome}>
+          <Redirect path="/login" component={Welcome} />
+        </Paper>
+      </div>
+    ) : (
+      <div className={classes.root}>
+        <NavBar
+          handleDrawerToggle={this.handleDrawerToggle}
+          mobileOpen={this.state.mobileOpen}
+          loggedIn={this.state.loggedIn}
         />
         <Main
           handleDrawerToggle={this.handleDrawerToggle}
