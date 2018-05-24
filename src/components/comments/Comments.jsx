@@ -5,6 +5,8 @@ import PostComment from "./PostComment";
 import typicodeApiGET from "../../helperFunctions/typicodeGet";
 import typicodeApiPOST from "../../helperFunctions/typicodePost";
 
+import List from "@material-ui/core/List";
+
 export default class Comments extends Component {
   constructor(props) {
     super(props);
@@ -61,7 +63,7 @@ export default class Comments extends Component {
     });
     return (
       <div>
-        {comments}
+        <List>{comments}</List>
         <PostComment postCommentHandler={this.postCommentHandler} />
       </div>
     );
