@@ -2,16 +2,14 @@ import { Component } from "react";
 import render from "react-dom";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
-import Main from "./components/Main";
-import Profile from "./components/userProfile/Profile";
+import Layout from "./components/Layout";
 
 export default class App extends Component {
   render() {
     return (
       <Router>
         <div className="App">
-          <Route path="/" component={Main} />
+          <Route path="/" component={Layout} />
         </div>
       </Router>
     );

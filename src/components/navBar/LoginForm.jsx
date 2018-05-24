@@ -1,6 +1,6 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
@@ -26,16 +26,25 @@ class LoginModal extends Component {
     return (
       <div>
         <div className={classes.paper}>
-          <form className={classes.container} noValidate autoComplete="off">
-            <TextField
-              id="name"
-              label="Name"
-              className={classes.textField}
-              value=""
-              // onChange={classes.handleChange}
-              margin="normal"
-            />
-          </form>
+          {/* <form autoComplete="off"> */}
+          <TextField
+            id="name"
+            label="Username"
+            autoFocus={true}
+            margin="normal"
+            onKeyPress={evt => {
+              if (evt.key === "Enter" && evt.target.value.length !== 0) {
+                if (evt.target.value !== "Josh") {
+                  console.log("poop");
+                  return null;
+                } else {
+                  this.props.loginHandler(evt.target.value);
+                  evt.target.value = "";
+                }
+              }
+            }}
+          />
+          {/* </form> */}
         </div>
       </div>
     );

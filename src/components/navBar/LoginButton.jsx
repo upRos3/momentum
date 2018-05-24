@@ -14,20 +14,27 @@ const styles = {
 };
 
 class LoginButton extends Component {
-  state = {
-    open: false,
-    loggedIn: false
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false,
+      loggedIn: false
+    };
+  }
+
+  loginHandler = username => {
+    console.log(username);
+  };
+  handleOpen = e => {
+    this.setState({ open: true });
+  };
+
+  handleClose = e => {
+    this.setState({ open: false });
   };
 
   render() {
     const classes = this.props;
-    const handleOpen = e => {
-      this.setState({ open: true });
-    };
-
-    const handleClose = e => {
-      this.setState({ open: false });
-    };
 
     // This is temporary until I have the model working
     const login = e => {
@@ -38,24 +45,15 @@ class LoginButton extends Component {
       this.setState({ loggedIn: false });
     };
 
-    const handleChange = e => {
-      console.log("In the handle change");
-    };
-
     const loginButtonToggle = () => {
       if (!this.state.loggedIn) {
         return (
           <div>
-            <Button color="inherit" onClick={login}>
+            <Button color="inherit" onClick={this.handleOpen}>
               Login
             </Button>
-            <Modal
-              aria-labelledby="simple-modal-title"
-              aria-describedby="simple-modal-description"
-              open={this.state.open}
-              onClose={handleClose}
-            >
-              <LoginModal />
+            <Modal open={this.state.open} onClose={this.handleClose}>
+              <LoginModal loginHandler={this.loginHandler} />
             </Modal>
           </div>
         );
