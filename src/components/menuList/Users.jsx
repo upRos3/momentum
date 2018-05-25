@@ -42,6 +42,7 @@ export default class Users extends Component {
           key={user[0].id}
           id={user[0].id}
           userAvatar={user[1]}
+          handleDrawerToggle={this.props.handleDrawerToggle}
         />
       );
     });
