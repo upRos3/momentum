@@ -25,7 +25,6 @@ export const Routes = () => {
       <Router>
         <Switch>
           <Route path="/" render={FirstRoute} />
-          <Route exact path="/main" component={Layout} />
           <Route exact path="/login" component={LoginMessage} />
         </Switch>
       </Router>

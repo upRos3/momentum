@@ -1,10 +1,11 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import MenuDrawer from "./menuDrawer/MenuDrawer";
 import ProfileLayout from "./userProfile/ProfileLayout";
 import Albums from "./photoAlbums/Albums";
 import Photos from "./photoAlbums/Photos";
+import FourOhFour from "./404/404";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -40,13 +41,12 @@ class Main extends Component {
           mobileOpen={this.props.mobileOpen}
         />
         <Paper>
-          <Route exact path="/user/:id/" component={ProfileLayout} />
-        </Paper>
-        <Paper>
-          <Route path="/albums/" component={Albums} />
-        </Paper>
-        <Paper>
-          <Route path="/album/:id/photos" component={Photos} />
+          <Switch>
+            <Route exact path="/user/:id/" component={ProfileLayout} />
+            <Route path="/albums/" component={Albums} />
+            <Route path="/album/:id/photos" component={Photos} />
+            <Route component={FourOhFour} />
+          </Switch>
         </Paper>
       </main>
     );

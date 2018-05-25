@@ -2,7 +2,6 @@ import { Component } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import HomeButton from "./HomeButton";
-import PostsButton from "./PostsButton";
 import AlbumsButton from "./AlbumsButton";
 import UsersButton from "./UsersButton";
 
