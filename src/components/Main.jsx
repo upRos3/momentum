@@ -42,7 +42,11 @@ class Main extends Component {
         />
         <Paper>
           <Switch>
-            <Route exact path="/user/:id/" component={ProfileLayout} />
+            <Route
+              exact
+              path="/user/:id([1-9]|10)/"
+              component={ProfileLayout}
+            />
             <Route path="/albums/" component={Albums} />
             <Route path="/album/:id/photos" component={Photos} />
             <Route component={FourOhFour} />
