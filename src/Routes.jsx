@@ -6,9 +6,9 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import App from "./App";
 import Layout from "./components/Layout";
 import LoginMessage from "./components/loginMessage/LoginMessage";
-import App from "./App";
 import Main from "./components/Main";
 
 const FirstRoute = () => {

@@ -1,7 +1,7 @@
 import { render } from "react-dom";
 import { AppContainer } from "react-hot-loader";
 import App from "./App";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { Routes } from "./Routes";
 
 const root = document.getElementById("root");

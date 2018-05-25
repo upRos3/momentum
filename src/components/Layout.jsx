@@ -1,9 +1,8 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
-import { Route, Redirect } from "react-router-dom";
+import LoginMessage from "./loginMessage/LoginMessage";
 import NavBar from "./navBar/NavBar";
 import Main from "./Main";
-import LoginMessage from "./loginMessage/LoginMessage";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";

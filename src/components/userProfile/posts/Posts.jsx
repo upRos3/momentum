@@ -1,10 +1,7 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
-import typicodeApiGET from "../../../helperFunctions/typicodeGet.js";
 import Post from "./Post";
-
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
+import typicodeApiGET from "../../../helperFunctions/typicodeGet.js";
 
 export default class Posts extends Component {
   constructor(props) {

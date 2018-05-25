@@ -1,18 +1,16 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
 import { Route, Switch } from "react-router-dom";
-import MenuDrawer from "./menuDrawer/MenuDrawer";
-import ProfileLayout from "./userProfile/ProfileLayout";
 import Albums from "./photoAlbums/Albums";
-import Photos from "./photoAlbums/Photos";
 import FourOhFour from "./404/404";
+import MenuDrawer from "./menuDrawer/MenuDrawer";
+import Photos from "./photoAlbums/Photos";
+import ProfileLayout from "./userProfile/ProfileLayout";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-
-const drawerWidth = 150;
+import Paper from "@material-ui/core/Paper";
 
 const styles = theme => ({
   root: {

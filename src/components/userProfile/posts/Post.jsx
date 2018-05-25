@@ -4,21 +4,15 @@ import Comments from "../../comments/Comments";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
+import Avatar from "@material-ui/core/Avatar";
+import Collapse from "@material-ui/core/Collapse";
+import Divider from "@material-ui/core/Divider";
+import Grid from "@material-ui/core/Grid";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import Avatar from "@material-ui/core/Avatar";
-import Grid from "@material-ui/core/Grid";
-import Divider from "@material-ui/core/Divider";
-import Collapse from "@material-ui/core/Collapse";
 
-const styles = theme => ({
-  // nested: {
-  //   paddingLeft: theme.spacing.unit * 4
-  // }
-});
-
-class Post extends Component {
+export default class Post extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -54,9 +48,3 @@ class Post extends Component {
     );
   }
 }
-
-Post.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-export default withStyles(styles)(Post);
