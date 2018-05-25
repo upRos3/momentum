@@ -14,7 +14,7 @@ const styles = theme => ({
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-around",
-    overflow: "hidden",
+    // overflow: "hidden",
     backgroundColor: theme.palette.background.paper,
     margin: theme.spacing.unit * 2,
     width: "auto"
@@ -60,14 +60,14 @@ class Photos extends Component {
             isDesktop ? classes.gridListDesktop : classes.gridListMobile
           }
         >
-          <GridListTile key="Subheader" cols={4} style={{ height: "auto" }}>
+          <GridListTile key="Subheader" cols={2} style={{ height: "auto" }}>
             <Subheader component="div">{this.state.albumName}</Subheader>
           </GridListTile>
           {this.state.photos.map(photo => (
             <GridListTile
               key={photo.id}
               cols={4}
-              style={{ maxWidth: isDesktop ? 300 : 150 }}
+              style={{ maxWidth: isDesktop ? 300 : 135 }}
             >
               <img
                 src={isDesktop ? photo.url : photo.thumbnailUrl}
