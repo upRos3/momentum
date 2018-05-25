@@ -4,8 +4,8 @@ import MenuList from "../menuList/MenuList";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import Drawer from "@material-ui/core/Drawer";
 import Divider from "@material-ui/core/Divider";
+import Drawer from "@material-ui/core/Drawer";
 
 const drawerWidth = 240;
 

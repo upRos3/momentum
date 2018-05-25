@@ -1,13 +1,11 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import HomeButton from "./HomeButton";
 import AlbumsButton from "./AlbumsButton";
 import UsersButton from "./UsersButton";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import ListSubheader from "@material-ui/core/ListSubheader";
 import List from "@material-ui/core/List";
 
 const styles = theme => ({

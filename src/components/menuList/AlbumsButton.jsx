@@ -2,10 +2,10 @@ import { Component } from "react";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 
+import AlbumIcon from "@material-ui/icons/PhotoAlbum";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import AlbumIcon from "@material-ui/icons/PhotoAlbum";
 
 export default class AlbumsButton extends Component {
   render() {

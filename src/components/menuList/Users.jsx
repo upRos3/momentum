@@ -1,9 +1,9 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
-import User from "./User";
 import axios from "axios";
 import Lodash from "lodash";
 import typicodeApiGET from "../../helperFunctions/typicodeGet.js";
+import User from "./User";
 
 export default class Users extends Component {
   constructor(props) {
