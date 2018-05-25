@@ -5,7 +5,6 @@ import MenuDrawer from "./menuDrawer/MenuDrawer";
 import ProfileLayout from "./userProfile/ProfileLayout";
 import Albums from "./photoAlbums/Albums";
 import Photos from "./photoAlbums/Photos";
-import NavBar from "./navBar/NavBar";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -41,7 +40,7 @@ class Main extends Component {
           mobileOpen={this.props.mobileOpen}
         />
         <Paper>
-          <Route path="/user/:id/" component={ProfileLayout} />
+          <Route exact path="/user/:id/" component={ProfileLayout} />
         </Paper>
         <Paper>
           <Route path="/albums/" component={Albums} />

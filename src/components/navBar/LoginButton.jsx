@@ -22,9 +22,6 @@ class LoginButton extends Component {
     };
   }
 
-  loginHandler = username => {
-    console.log(username);
-  };
   handleOpen = e => {
     this.setState({ open: true });
   };
@@ -54,7 +51,7 @@ class LoginButton extends Component {
               Login
             </Button>
             <Modal open={this.state.open} onClose={this.handleClose}>
-              <LoginModal loginHandler={this.loginHandler} />
+              <LoginModal />
             </Modal>
           </div>
         );

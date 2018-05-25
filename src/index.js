@@ -1,15 +1,15 @@
 import { render } from "react-dom";
 import { AppContainer } from "react-hot-loader";
 import App from "./App";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 
 const root = document.getElementById("root");
 const load = () =>
   render(
     <AppContainer>
-      <Router>
+      <BrowserRouter>
         <App />
-      </Router>
+      </BrowserRouter>
     </AppContainer>,
     root
   );

@@ -14,7 +14,7 @@ export default class HomeButton extends Component {
         button
         onClick={this.props.handleDrawerToggle}
         component={Link}
-        to="/"
+        to="/user/1"
       >
         <ListItemIcon>
           <HomeIcon />
