@@ -14,7 +14,7 @@ export default class Users extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     typicodeApiGET("users").then(res => {
       this.setState({ usersInfo: res });
     });
@@ -34,18 +34,18 @@ export default class Users extends Component {
 
   render() {
     // Lodash 'zips' the two arrays togeather to allow for mapping of state.
-    const users = _.zip(this.state.usersInfo, this.state.usersAvatar)
-      .slice(1)
-      .map(user => {
-        return (
-          <User
-            username={user[0].username}
-            key={user[0].id}
-            id={user[0].id}
-            userAvatar={user[1]}
-          />
-        );
-      });
-    return <div>{users}</div>;
+    const users = _.zip(this.state.usersInfo, this.state.usersAvatar);
+
+    const zippedUsers = users.slice(1).map(user => {
+      return (
+        <User
+          username={user[0].username}
+          key={user[0].id}
+          id={user[0].id}
+          userAvatar={user[1]}
+        />
+      );
+    });
+    return <div>{zippedUsers}</div>;
   }
 }

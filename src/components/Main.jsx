@@ -25,7 +25,7 @@ const styles = theme => ({
     marginTop: theme.spacing.unit * 10,
     marginLeft: theme.spacing.unit * 32,
     margin: "auto",
-    width: "50%"
+    width: "auto"
   },
   containerWithoutDrawer: {
     zIndex: 100,
@@ -52,7 +52,6 @@ class Main extends Component {
   }
 
   componentWillUnmount() {
-    console.log("Bang");
     window.removeEventListener("resize", this.updatePredicate);
   }
 
