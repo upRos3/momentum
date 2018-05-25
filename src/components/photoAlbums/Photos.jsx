@@ -1,5 +1,6 @@
-import typicodeApiGET from "../../helperFunctions/typicodeGet.js";
 import { Component } from "react";
+import ReactDOM from "react-dom";
+import typicodeApiGET from "../../helperFunctions/typicodeGet.js";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -23,9 +24,6 @@ const styles = theme => ({
   },
   gridListDesktop: {
     maxWidth: 1250
-  },
-  icon: {
-    color: "rgba(255, 255, 255, 0.54)"
   }
 });
 

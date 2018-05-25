@@ -1,7 +1,7 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
-import typicodeApiGET from "../../helperFunctions/typicodeGet.js";
 import Album from "./Album";
+import typicodeApiGET from "../../helperFunctions/typicodeGet.js";
 
 export default class Albums extends Component {
   constructor(props) {
