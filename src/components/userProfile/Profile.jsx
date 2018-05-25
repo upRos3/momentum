@@ -53,22 +53,16 @@ class Profile extends Component {
 
     return (
       <div className={classes.root}>
-        <Table className={classes.table}>
+        <Table>
           <TableBody>
-            <TableRow
-              key="photo"
-              className={classes.pictureCell}
-              component="th"
-            >
-              <img src="https://www.placecage.com/gif/200/300" />
+            <TableRow key="photo">
+              <TableCell className={classes.pictureCell} component="th">
+                <img src="https://www.placecage.com/gif/200/300" />
+              </TableCell>
             </TableRow>
 
             <TableRow key="name">
-              <TableCell
-                className={classes.tableCell}
-                component="th"
-                scope="row"
-              >
+              <TableCell className={classes.tableCell} scope="row">
                 <Typography
                   variant="subheading"
                   component="p"
@@ -84,11 +78,7 @@ class Profile extends Component {
             </TableRow>
 
             <TableRow key="username">
-              <TableCell
-                className={classes.tableCell}
-                component="th"
-                scope="row"
-              >
+              <TableCell className={classes.tableCell} scope="row">
                 <Typography
                   variant="subheading"
                   component="p"
@@ -104,11 +94,7 @@ class Profile extends Component {
             </TableRow>
 
             <TableRow key="email">
-              <TableCell
-                className={classes.tableCell}
-                component="th"
-                scope="row"
-              >
+              <TableCell className={classes.tableCell} scope="row">
                 <Typography
                   variant="subheading"
                   component="p"
@@ -130,11 +116,7 @@ class Profile extends Component {
             </TableRow>
 
             <TableRow key="website">
-              <TableCell
-                className={classes.tableCell}
-                component="th"
-                scope="row"
-              >
+              <TableCell className={classes.tableCell} scope="row">
                 <Typography
                   variant="subheading"
                   component="p"
