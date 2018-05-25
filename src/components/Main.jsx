@@ -82,6 +82,7 @@ class Main extends Component {
               />
               <Route path="/albums/" component={Albums} />
               <Route
+                exact
                 path="/album/:id([1-9]|10)/photos"
                 render={props => (
                   <Photos {...props} isDesktop={this.state.isDesktop} />
