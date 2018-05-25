@@ -20,7 +20,6 @@ export default class Users extends Component {
     });
 
     axios.get("https://randomuser.me/api/?results=10").then(res => {
-      console.log(res);
       res.data.results.map(incomingAvatar => {
         this.setState(prevState => ({
           usersAvatar: [

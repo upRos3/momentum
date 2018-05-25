@@ -18,7 +18,10 @@ const styles = theme => ({
     maxWidth: 320
   },
   pictureCell: {
-    margin: "auto"
+    marginLeft: "auto",
+    marginRight: "auto",
+    display: "block",
+    marginTop: 10
   }
 });
 
@@ -52,10 +55,12 @@ class Profile extends Component {
       <div className={classes.root}>
         <Table className={classes.table}>
           <TableBody>
-            <TableRow key="photo">
-              <TableCell className={classes.pictureCell} component="th">
-                <img src="https://www.placecage.com/gif/200/300" />
-              </TableCell>
+            <TableRow
+              key="photo"
+              className={classes.pictureCell}
+              component="th"
+            >
+              <img src="https://www.placecage.com/gif/200/300" />
             </TableRow>
 
             <TableRow key="name">

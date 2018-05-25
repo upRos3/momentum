@@ -83,7 +83,12 @@ class Main extends Component {
                 component={ProfileLayout}
               />
               <Route path="/albums/" component={Albums} />
-              <Route path="/album/:id/photos" component={Photos} />
+              <Route
+                path="/album/:id([1-9]|10)/photos"
+                render={props => (
+                  <Photos {...props} isDesktop={this.state.isDesktop} />
+                )}
+              />
               <Route component={FourOhFour} />
             </Switch>
           </Paper>

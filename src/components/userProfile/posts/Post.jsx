@@ -40,7 +40,7 @@ class Post extends Component {
           <Avatar alt="userAvatar" src="https://www.placecage.com/c/200/300" />
           <ListItemText
             inset
-            primary={this.props.title}
+            primary={`${this.props.title} - Click for comments`}
             secondary={this.props.body}
           />
         </ListItem>
