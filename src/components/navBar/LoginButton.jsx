@@ -33,7 +33,6 @@ class LoginButton extends Component {
   render() {
     const classes = this.props;
 
-    // This is temporary until I have the model working
     const login = e => {
       this.setState({ loggedIn: true });
     };

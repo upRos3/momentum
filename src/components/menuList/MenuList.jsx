@@ -27,7 +27,6 @@ class MenuList extends Component {
       <div className={classes.root}>
         <List component="nav">
           <HomeButton handleDrawerToggle={this.props.handleDrawerToggle} />
-          <PostsButton handleDrawerToggle={this.props.handleDrawerToggle} />
           <AlbumsButton handleDrawerToggle={this.props.handleDrawerToggle} />
           <UsersButton handleDrawerToggle={this.props.handleDrawerToggle} />
         </List>

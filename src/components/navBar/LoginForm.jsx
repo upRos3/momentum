@@ -19,12 +19,12 @@ const styles = theme => ({
 });
 
 class LoginModal extends Component {
-  state = {};
+  state = { submitted: false };
 
   render() {
     const { classes } = this.props;
 
-    return (
+    return !this.state.submitted ? (
       <div>
         <div className={classes.paper}>
           <form autoComplete="off">
@@ -35,13 +35,13 @@ class LoginModal extends Component {
               margin="normal"
               onKeyPress={evt => {
                 if (evt.key === "Enter" && evt.target.value.length !== 0) {
+                  evt.preventDefault();
                   if (evt.target.value !== "Bret") {
-                    evt.preventDefault();
                     alert("Incorrect Username");
                   } else {
                     localStorage.setItem("loggedIn", "true");
                     evt.target.value = "";
-                    window.location.href("/user/1");
+                    this.setState({ submitted: true });
                   }
                 }
               }}
@@ -49,6 +49,8 @@ class LoginModal extends Component {
           </form>
         </div>
       </div>
+    ) : (
+      <Redirect to="/user/1" />
     );
   }
 }
