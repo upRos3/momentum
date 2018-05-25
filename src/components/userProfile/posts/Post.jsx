@@ -43,10 +43,9 @@ class Post extends Component {
             primary={this.props.title}
             secondary={this.props.body}
           />
-          {this.state.open}
         </ListItem>
         <Divider />
-        <Collapse in={this.state.open} timeout="auto" unmountOnExit>
+        <Collapse in={this.state.open} unmountOnExit>
           <List component="div">
             <Comments postId={this.props.id} />
           </List>

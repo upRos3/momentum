@@ -17,7 +17,8 @@ const drawerWidth = 150;
 const styles = theme => ({
   content: {
     marginTop: theme.spacing.unit * 10,
-    marginRight: theme.spacing.unit * 2,
+    // marginRight: theme.spacing.unit * 2,
+    // marginLeft: theme.spacing.unit * 2,
     margin: "auto",
     width: "50%",
     maxWidth: 1400,

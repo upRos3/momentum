@@ -22,9 +22,12 @@ export default class App extends Component {
         <NavBar
           handleDrawerToggle={this.handleDrawerToggle}
           mobileOpen={this.state.mobileOpen}
-          loggedIn={this.state.loggedIn}
+          // loggedIn={this.state.loggedIn}
         />
-        <Layout />
+        <Layout
+          handleDrawerToggle={this.handleDrawerToggle}
+          mobileOpen={this.state.mobileOpen}
+        />
       </div>
     );
   }
