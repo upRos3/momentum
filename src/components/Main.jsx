@@ -15,15 +15,24 @@ import Grid from "@material-ui/core/Grid";
 const drawerWidth = 150;
 
 const styles = theme => ({
-  content: {
-    marginTop: theme.spacing.unit * 10,
-    // marginRight: theme.spacing.unit * 2,
-    // marginLeft: theme.spacing.unit * 2,
-    margin: "auto",
-    width: "50%",
-    maxWidth: 1400,
+  root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.default
+  },
+  containerWithDrawer: {
+    zIndex: 100,
+    position: "relative",
+    marginTop: theme.spacing.unit * 10,
+    marginLeft: theme.spacing.unit * 32,
+    margin: "auto",
+    width: "50%"
+  },
+  containerWithoutDrawer: {
+    zIndex: 100,
+    position: "relative",
+    marginTop: theme.spacing.unit * 10,
+    margin: "auto",
+    width: "auto"
   },
   MenuDrawer: {
     zIndex: 3
@@ -31,28 +40,55 @@ const styles = theme => ({
 });
 
 class Main extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      responsive: false
+    };
+
+    this.updatePredicate = this.updatePredicate.bind(this);
+  }
+  componentDidMount() {
+    this.updatePredicate();
+    window.addEventListener("resize", this.updatePredicate);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updatePredicate);
+  }
+
+  updatePredicate() {
+    this.setState({ isDesktop: window.innerWidth > 959 });
+  }
+
   render() {
     const { classes, theme } = this.props;
 
+    const isDesktop = this.state.isDesktop
+      ? classes.containerWithDrawer
+      : classes.containerWithoutDrawer;
+
     return (
-      <main className={classes.content}>
+      <main className={classes.root}>
         <MenuDrawer
           className={classes.MenuDrawer}
           handleDrawerToggle={this.props.handleDrawerToggle}
           mobileOpen={this.props.mobileOpen}
         />
-        <Paper>
-          <Switch>
-            <Route
-              exact
-              path="/user/:id([1-9]|10)/"
-              component={ProfileLayout}
-            />
-            <Route path="/albums/" component={Albums} />
-            <Route path="/album/:id/photos" component={Photos} />
-            <Route component={FourOhFour} />
-          </Switch>
-        </Paper>
+        <div className={isDesktop}>
+          <Paper className={classes.content}>
+            <Switch>
+              <Route
+                exact
+                path="/user/:id([1-9]|10)/"
+                component={ProfileLayout}
+              />
+              <Route path="/albums/" component={Albums} />
+              <Route path="/album/:id/photos" component={Photos} />
+              <Route component={FourOhFour} />
+            </Switch>
+          </Paper>
+        </div>
       </main>
     );
   }

@@ -10,9 +10,10 @@ import Grid from "@material-ui/core/Grid";
 
 const styles = theme => ({
   root: {
+    padding: theme.spacing.unit * 2
+  },
+  profile: {
     position: "relative",
-    marginTop: theme.spacing.unit * 3,
-    marginLeft: theme.spacing.unit * 10,
     overflowX: "auto",
     flexGrow: 1,
     maxWidth: 320
@@ -29,9 +30,9 @@ class ProfileLayout extends Component {
     const { classes } = this.props;
 
     return (
-      <Grid container spacing={16}>
+      <Grid container spacing={16} className={classes.root}>
         <Grid item xs>
-          <Paper className={classes.root}>
+          <Paper className={classes.profile}>
             <Profile userId={userId} />
           </Paper>
         </Grid>

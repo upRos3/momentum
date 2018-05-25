@@ -1,7 +1,6 @@
 import { Component } from "react";
 import ReactDOM from "react-dom";
 import typicodeApiGET from "../../../helperFunctions/typicodeGet.js";
-import Profile from "../Profile";
 import Post from "./Post";
 
 import Grid from "@material-ui/core/Grid";
@@ -22,6 +21,10 @@ export default class Posts extends Component {
   }
 
   componentDidUpdate() {
+    // Deals with async issue due to eventListener in Main
+    if (!this.state.posts[0]) {
+      return null;
+    }
     // Conditional needs needs to read different data types
     if (this.props.userId != this.state.posts[0].userId) {
       typicodeApiGET("posts", `?userId=${this.props.userId}`).then(res => {

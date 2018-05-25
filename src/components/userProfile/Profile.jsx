@@ -14,14 +14,11 @@ import Typography from "@material-ui/core/Typography";
 const styles = theme => ({
   root: {
     width: "100%",
-    marginTop: theme.spacing.unit * 3,
-    overflowX: "auto",
     flexGrow: 1,
-    maxWidth: 300
+    maxWidth: 320
   },
   pictureCell: {
-    marginLeft: "auto",
-    marginRight: "auto"
+    margin: "auto"
   }
 });
 
