@@ -3,6 +3,6 @@ import ReactDOM from "react-dom";
 
 export default class FourOhFour extends Component {
   render() {
-    return <div>Page not found :(</div>;
+    return <div>404! Page not found :(</div>;
   }
 }
