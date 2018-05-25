@@ -42,9 +42,7 @@ const styles = theme => ({
 class Main extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      responsive: false
-    };
+    this.state = {};
 
     this.updatePredicate = this.updatePredicate.bind(this);
   }
@@ -54,6 +52,7 @@ class Main extends Component {
   }
 
   componentWillUnmount() {
+    console.log("Bang");
     window.removeEventListener("resize", this.updatePredicate);
   }
 
@@ -74,6 +73,7 @@ class Main extends Component {
           className={classes.MenuDrawer}
           handleDrawerToggle={this.props.handleDrawerToggle}
           mobileOpen={this.props.mobileOpen}
+          isDesktop={this.state.isDesktop}
         />
         <div className={isDesktop}>
           <Paper className={classes.content}>

@@ -32,37 +32,34 @@ class MenuDrawer extends Component {
       </div>
     );
 
-    return (
-      <div>
-        <Hidden mdUp>
-          <Drawer
-            variant="temporary"
-            anchor={theme.direction === "rtl" ? "right" : "left"}
-            open={this.props.mobileOpen}
-            onClose={this.props.handleDrawerToggle}
-            classes={{
-              paper: classes.drawerPaper
-            }}
-            ModalProps={{
-              keepMounted: true // Better open performance on mobile.
-            }}
-          >
-            {drawer}
-          </Drawer>
-        </Hidden>
-        <Hidden smDown implementation="css">
-          <Drawer
-            variant="permanent"
-            open
-            classes={{
-              paper: classes.drawerPaper
-            }}
-          >
-            {drawer}
-          </Drawer>
-        </Hidden>
-      </div>
+    const responsiveDrawer = this.props.isDesktop ? (
+      <Drawer
+        variant="permanent"
+        open
+        classes={{
+          paper: classes.drawerPaper
+        }}
+      >
+        {drawer}
+      </Drawer>
+    ) : (
+      <Drawer
+        variant="temporary"
+        anchor={theme.direction === "rtl" ? "right" : "left"}
+        open={this.props.mobileOpen}
+        onClose={this.props.handleDrawerToggle}
+        classes={{
+          paper: classes.drawerPaper
+        }}
+        ModalProps={{
+          keepMounted: true // Better open performance on mobile.
+        }}
+      >
+        {drawer}
+      </Drawer>
     );
+
+    return <div>{responsiveDrawer}</div>;
   }
 }
 
