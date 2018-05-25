@@ -33,6 +33,7 @@ class LoginModal extends Component {
               label="Username"
               autoFocus={true}
               margin="normal"
+              placeholder="Press enter to send"
               onKeyPress={evt => {
                 if (evt.key === "Enter" && evt.target.value.length !== 0) {
                   evt.preventDefault();

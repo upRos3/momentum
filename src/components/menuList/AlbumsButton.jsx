@@ -14,7 +14,7 @@ export default class AlbumsButton extends Component {
         button
         onClick={this.props.handleDrawerToggle}
         component={Link}
-        to="/albums/"
+        to="/albums"
       >
         <ListItemIcon>
           <AlbumIcon />

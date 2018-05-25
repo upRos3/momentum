@@ -14,7 +14,6 @@ export default class PostComment extends Component {
           InputLabelProps={{
             shrink: true
           }}
-          // onChange={this.clearText}
           placeholder="Press enter to send"
           fullWidth
           margin="normal"

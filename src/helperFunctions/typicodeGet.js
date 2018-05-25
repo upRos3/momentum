@@ -1,7 +1,6 @@
 import API from "../api";
 
 export default function typicodeApiGET(path, params) {
-  console.log(path + " " + params);
   if (!params) {
     return API.get(path)
       .then(res => {

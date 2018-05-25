@@ -5,7 +5,6 @@ import MenuList from "../menuList/MenuList";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
-import Hidden from "@material-ui/core/Hidden";
 import Divider from "@material-ui/core/Divider";
 
 const drawerWidth = 240;
@@ -52,7 +51,7 @@ class MenuDrawer extends Component {
           paper: classes.drawerPaper
         }}
         ModalProps={{
-          keepMounted: true // Better open performance on mobile.
+          keepMounted: true
         }}
       >
         {drawer}
